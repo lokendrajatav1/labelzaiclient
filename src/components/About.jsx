@@ -56,9 +56,9 @@ const About = () => {
               ))}
             </div>
 
-            <button className="bg-slate-900 text-white px-8 py-3.5 text-base font-semibold hover:bg-slate-800 transition-all rounded-full flex items-center gap-2 shadow-lg shadow-slate-900/10 active:scale-95">
+            {/* <button className="bg-slate-900 text-white px-8 py-3.5 text-base font-semibold hover:bg-slate-800 transition-all rounded-full flex items-center gap-2 shadow-lg shadow-slate-900/10 active:scale-95">
               Explore Our Story
-            </button>
+            </button> */}
           </div>
 
         </div>

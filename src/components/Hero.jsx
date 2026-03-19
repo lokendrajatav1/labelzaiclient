@@ -37,12 +37,12 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
-            <button className="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 text-lg font-semibold hover:bg-slate-800 transition-all rounded-full shadow-lg shadow-slate-900/10">
-              Start for free <ChevronRight size={20} />
-            </button>
-            <Link to="/contact" className="flex items-center justify-center bg-white text-slate-900 border border-slate-200 px-10 py-4 text-lg font-semibold hover:bg-slate-50 transition-all rounded-full">
-              Get in touch
+            <Link to="/contact" className="flex items-center justify-center gap-3 bg-slate-900 text-white px-8 py-4 text-lg font-semibold hover:bg-slate-800 transition-all rounded-full shadow-lg shadow-slate-900/10">
+              Get in touch <ChevronRight size={20} />
             </Link>
+            {/* <Link to="/contact" className="flex items-center justify-center bg-white text-slate-900 border border-slate-200 px-10 py-4 text-lg font-semibold hover:bg-slate-50 transition-all rounded-full">
+              Get in touch
+            </Link> */}
           </div>
         </div>
 

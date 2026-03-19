@@ -50,8 +50,8 @@ const FAQ = () => {
               Find answers to frequently asked questions about our process,
               security, and specialized data solutions.
             </p>
-            <div className="p-3 md:p-8 bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/40 flex items-start gap-5">
-              <div className="p-4 bg-brand-50 text-brand-600 rounded-2xl shrink-0 shadow-sm border border-brand-100">
+            <div className="p-3 md:p-8 bg-white rounded-3xl border border-slate-100 flex items-start gap-5">
+              <div className="p-4 bg-brand-50 text-brand-600 rounded-2xl shrink-0 border border-brand-100">
                 <HelpCircle size={28} />
               </div>
               <div>
@@ -62,7 +62,7 @@ const FAQ = () => {
                   Our strategy team is here to help you solve your data
                   challenges.
                 </p>
-                <Link to="/contact" className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-slate-800 transition-all active:scale-95 shadow-md">
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-slate-800 transition-all active:scale-95">
                   Get in touch
                 </Link>
               </div>
@@ -76,7 +76,7 @@ const FAQ = () => {
                 key={index}
                 className={`group border transition-all duration-300 rounded-[2rem] overflow-hidden ${
                   openIndex === index
-                    ? "bg-white border-brand-200 shadow-xl shadow-brand-600/5 translate-x-2"
+                    ? "bg-white border-brand-200 translate-x-1"
                     : "bg-white border-slate-100 hover:border-brand-200"
                 }`}
               >
@@ -96,7 +96,7 @@ const FAQ = () => {
                   <div
                     className={`shrink-0 w-10 h-10 flex items-center justify-center rounded-2xl transition-all duration-500 ${
                       openIndex === index
-                        ? "bg-brand-600 text-white rotate-0 shadow-lg shadow-brand-600/30"
+                        ? "bg-brand-600 text-white rotate-0"
                         : "bg-slate-50 border border-slate-100 text-slate-400 rotate-180"
                     }`}
                   >

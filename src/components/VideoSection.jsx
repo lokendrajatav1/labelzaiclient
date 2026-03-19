@@ -9,13 +9,21 @@ const VideoSection = () => {
   const videoWrapperRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Timeline for the video expansion
+    const mm = gsap.matchMedia();
+
+    mm.add({
+      // Desktop
+      isDesktop: "(min-width: 768px)",
+      // Mobile
+      isMobile: "(max-width: 767px)"
+    }, (context) => {
+      const { isDesktop } = context.conditions;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top bottom", // Start when the top of the section enters the bottom of the viewport
-          end: "bottom bottom", // End when the bottom of the section reaches the bottom of the viewport
+          start: "top bottom",
+          end: "bottom bottom",
           scrub: 1,
         },
       });
@@ -23,30 +31,31 @@ const VideoSection = () => {
       tl.fromTo(
         videoWrapperRef.current,
         {
-          width: "60vw",
-          height: "40vh",
-          borderRadius: "40px",
-          y: 100,
+          width: isDesktop ? "60vw" : "85vw",
+          height: isDesktop ? "40vh" : "30vh",
+          borderRadius: isDesktop ? "40px" : "24px",
+          y: isDesktop ? 100 : 50,
           opacity: 0.5,
         },
         {
-          width: "1280px", // max-w-7xl equivalent
-          height: "70vh",
-          borderRadius: "40px",
+          width: isDesktop ? "1280px" : "95vw",
+          maxWidth: "100%",
+          height: isDesktop ? "75vh" : "50vh",
+          borderRadius: isDesktop ? "40px" : "24px",
           y: 0,
           opacity: 1,
           ease: "power2.out",
         },
       );
-    }, containerRef);
+    });
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-auto md:h-[150vh] bg-white flex flex-col items-center"
+      className="relative w-full h-[120vh] md:h-[150vh] bg-white flex flex-col items-center"
     >
       {/* Spacer to give room for the scroll effect to breathe */}
       <div className="h-[30vh] w-full flex flex-col items-center justify-center pt-20">
@@ -62,7 +71,7 @@ const VideoSection = () => {
       <div className="sticky top-0 w-full h-screen flex items-center justify-center overflow-hidden">
         <div
           ref={videoWrapperRef}
-          className="relative overflow-hidden shadow-2xl bg-black"
+          className="relative overflow-hidden bg-black"
         >
           <video
             autoPlay
