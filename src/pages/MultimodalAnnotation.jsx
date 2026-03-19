@@ -10,6 +10,7 @@ const MultimodalAnnotation = () => {
   const annotationServices = [
     {
       title: "Image + Text Annotation",
+      image: "/multimodal/image-text.png",
       description:
         "We provide image caption validation, visual question answering (VQA), and document understanding datasets. Our annotators link textual descriptions with visual elements to help models understand the semantic relationship between what is seen and what is said.",
       features: [
@@ -21,6 +22,7 @@ const MultimodalAnnotation = () => {
     },
     {
       title: "Video + Audio Annotation",
+      image: "/multimodal/video-audio.png",
       description:
         "Synchronizing action with sound. We handle event detection, action-sound synchronization, and speaker-to-scene alignment, allowing AI models to learn from multi-sensory temporal data.",
       features: [
@@ -32,6 +34,7 @@ const MultimodalAnnotation = () => {
     },
     {
       title: "LiDAR + Camera Fusion",
+      image: "/multimodal/lidar-camera.png",
       description:
         "The gold standard for autonomous systems. We provide 3D cuboids, object tracking, and sensor-aligned labeling where LiDAR point clouds are perfectly mapped to 2D camera frames for robust depth verification.",
       features: [
@@ -43,6 +46,7 @@ const MultimodalAnnotation = () => {
     },
     {
       title: "Speech + Text Alignment",
+      image: "/multimodal/speech-text.png",
       description:
         "Mapping transcripts to spoken words with millisecond precision. We provide intent tagging, emotion labeling, and sentiment categorization across both the acoustic and textual representations of language.",
       features: [
@@ -54,6 +58,7 @@ const MultimodalAnnotation = () => {
     },
     {
       title: "Cross-Modal Relationship Tagging",
+      image: "/multimodal/relationship-tagging.png",
       description:
         "Linking events, objects, and interactions across multiple data sources. We identify how a sound in an audio track relates to an object in a video frame or a mention in a text document.",
       features: [
@@ -65,6 +70,7 @@ const MultimodalAnnotation = () => {
     },
     {
       title: "Temporal and Spatial Synchronization",
+      image: "/multimodal/synchronization.png",
       description:
         "Ensuring frame-level and time-based alignment across all modalities. This foundational service provides the synchronization required for complex real-world scene interpretation by AI models.",
       features: [
@@ -228,15 +234,22 @@ const MultimodalAnnotation = () => {
                 </div>
               </div>
               <div className="flex-1 w-full max-w-lg">
-                 <div className="relative group">
-                    <div className="aspect-[4/3] bg-slate-100 rounded-[2.5rem] flex items-center justify-center relative overflow-hidden shadow-sm border border-slate-100">
-                       <Merge size={64} className="text-slate-300 group-hover:text-brand-200 transition-colors duration-700 group-hover:scale-110 transition-transform" />
-                       <div className="absolute inset-x-8 bottom-8 p-6 bg-white/80 backdrop-blur-md rounded-2xl border border-white/50 shadow-lg translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                          <div className="text-brand-600 font-bold text-[10px] tracking-widest uppercase mb-1">Synchronization_Logic</div>
-                          <div className="text-slate-950 font-semibold text-xs">Cross-Modal Context Verification Active</div>
-                       </div>
-                    </div>
-                 </div>
+                <div className="relative group">
+                  {/* Glassmorphism Background Glow */}
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-brand-500/10 to-accent-cyan/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  {/* Main Image Container */}
+                  <div className="relative rounded-[2.5rem] overflow-hidden bg-white border border-slate-100 shadow-xl transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-brand-500/10 group-hover:-translate-y-2">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    
+                    {/* Glossy Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/20 via-transparent to-white/10 opacity-60"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

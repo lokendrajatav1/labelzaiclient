@@ -10,6 +10,7 @@ const NaturalLanguageProcessing = () => {
   const annotationServices = [
     {
       title: "Text Classification & Categorization",
+      image: "/nlpservice/text-classification.png",
       description:
         "We categorize and label unstructured text into predefined topics, intents, priority levels, and industry domains. This structured data powers recommendation engines, automated ticketing systems, and content organization tools.",
       features: [
@@ -20,6 +21,7 @@ const NaturalLanguageProcessing = () => {
     },
     {
       title: "Named Entity Recognition (NER)",
+      image: "/nlpservice/ner.png",
       description:
         "Our experts identify and extract specific entities from text, including people, locations, organizations, dates, product names, as well as specialized medical and financial terminology. Essential for information extraction and knowledge graph construction.",
       features: [
@@ -30,6 +32,7 @@ const NaturalLanguageProcessing = () => {
     },
     {
       title: "Sentiment & Emotion Analysis",
+      image: "/nlpservice/sentiment-analysis.png",
       description:
         "Detecting the underlying tone and emotional state in human communication. We perform polarity detection (positive/negative/neutral) and provide fine-grained emotional tagging (e.g., frustration, excitement, satisfaction) to help AI systems respond with empathy.",
       features: [
@@ -40,6 +43,7 @@ const NaturalLanguageProcessing = () => {
     },
     {
       title: "Part-of-Speech (POS) & Syntax Annotation",
+      image: "/nlpservice/pos-annotation.png",
       description:
         "Providing the linguistic building blocks for advanced language models. We label words according to their grammatical function and structural relationship within sentences, enabling machines to parse complex grammar and syntax.",
       features: [
@@ -50,6 +54,7 @@ const NaturalLanguageProcessing = () => {
     },
     {
       title: "Conversation & Dialogue Annotation",
+      image: "/nlpservice/conversation-annotation.png",
       description:
         "Transforming multi-turn interactions into structured datasets for chatbots and virtual assistants. We track context across turns, label speaker roles, and evaluate response quality to train more coherent conversational agents.",
       features: [
@@ -60,6 +65,7 @@ const NaturalLanguageProcessing = () => {
     },
     {
       title: "Content Moderation & Toxicity Detection",
+      image: "/nlpservice/content-moderation.png",
       description:
         "Building safer online environments by labeling harmful, offensive, or policy-violating language. Our annotators provide high-confidence datasets to filter hate speech, harassment, and inappropriate content.",
       features: [
@@ -70,6 +76,7 @@ const NaturalLanguageProcessing = () => {
     },
     {
       title: "Keyphrase & Summary Tagging",
+      image: "/nlpservice/keyphrase-tagging.png",
       description:
         "Highlighting critical information and generating human-verified summaries within text corpora. This data powers intelligent search systems, knowledge management platforms, and automated document summarization models.",
       features: [
@@ -253,18 +260,22 @@ const NaturalLanguageProcessing = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex-1 w-full max-w-md">
-                <div className="p-10 bg-slate-900 text-white rounded-3xl font-mono text-sm relative group overflow-hidden border border-slate-800">
-                   <div className="mb-4 text-slate-400 font-bold flex items-center gap-2">
-                      <Languages size={18} /> Dataset_Sample_0{index + 1}.json
-                   </div>
-                   <div className="space-y-2">
-                      <div className="text-green-400">"text" <span className="text-white">:</span> "LabelzAI delivers human-powered data..."</div>
-                      <div className="text-brand-400">"annotation" <span className="text-white">:</span> [</div>
-                      <div className="pl-4 text-accent-cyan">{"{ \"type\": \"INTENT\", \"val\": \"Inquiry\" }"}</div>
-                      <div className="text-brand-400">]</div>
-                   </div>
-                   <div className="absolute top-0 right-0 w-32 h-32 bg-brand-600/10 rounded-full blur-[40px] group-hover:bg-brand-600/20 transition-all duration-700"></div>
+              <div className="flex-1 w-full max-w-lg">
+                <div className="relative group">
+                  {/* Glassmorphism Background Glow */}
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-brand-500/10 to-accent-cyan/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  {/* Main Image Container */}
+                  <div className="relative rounded-[2.5rem] overflow-hidden bg-white border border-slate-100 shadow-xl transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-brand-500/10 group-hover:-translate-y-2">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    
+                    {/* Glossy Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/20 via-transparent to-white/10 opacity-60"></div>
+                  </div>
                 </div>
               </div>
             </div>

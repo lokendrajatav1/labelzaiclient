@@ -10,6 +10,7 @@ const Lidar3DAnnotation = () => {
   const annotationServices = [
     {
       title: "3D Bounding Boxes (Cuboids)",
+      image: "/lidar3d/cuboids.png",
       description:
         "We provide precise cuboid annotation for vehicles, pedestrians, cyclists, traffic signs, and other objects within point cloud data. Our annotators define exact position, 3D dimensions (length, width, height), and orientation (yaw, pitch, roll) to help AI models understand spatial volume and depth.",
       features: [
@@ -21,6 +22,7 @@ const Lidar3DAnnotation = () => {
     },
     {
       title: "3D Semantic Segmentation",
+      image: "/lidar3d/semantic-segmentation.png",
       description:
         "Point-level labeling of 3D environments. We classify each individual point in a LiDAR point cloud into categories such as roads, sidewalks, buildings, vegetation, and obstacles. This enables AI systems to achieve comprehensive 360-degree scene understanding in complex urban environments.",
       features: [
@@ -32,6 +34,7 @@ const Lidar3DAnnotation = () => {
     },
     {
       title: "3D Instance Segmentation",
+      image: "/lidar3d/instance-segmentation.png",
       description:
         "Separating individual objects within the same class within a 3D space. This process distinguishes between different instances of vehicles or pedestrians, supporting advanced object detection and behavior analysis required for safe autonomous navigation.",
       features: [
@@ -43,6 +46,7 @@ const Lidar3DAnnotation = () => {
     },
     {
       title: "Multi-Frame Object Tracking",
+      image: "/lidar3d/object-tracking.png",
       description:
         "Tracking 3D objects across LiDAR sequences. We maintain consistent object IDs across temporal frames to capture motion patterns, trajectories, and interactions over time, which is critical for predicting future states in autonomous systems.",
       features: [
@@ -54,6 +58,7 @@ const Lidar3DAnnotation = () => {
     },
     {
       title: "Sensor Fusion Annotation",
+      image: "/lidar3d/sensor-fusion.png",
       description:
         "Synchronizing LiDAR point clouds with camera, radar, and GPS data. We provide high-accuracy perception model training datasets where 3D labels are precisely projected onto 2D image frames, ensuring cross-sensor consistency and depth verification.",
       features: [
@@ -179,23 +184,21 @@ const Lidar3DAnnotation = () => {
                 </div>
               </div>
               <div className="flex-1 w-full max-w-lg">
-                <div className="aspect-square bg-slate-950 rounded-[3rem] p-12 relative overflow-hidden group shadow-2xl">
-                   {/* Abstract Point Cloud Graphic */}
-                   <div className="absolute inset-0 opacity-20 pointer-events-none">
-                      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#4f46e5_2px,transparent_2px)] [background-size:24px_24px]"></div>
-                   </div>
-                   <div className="relative z-10 h-full flex items-center justify-center">
-                       <div className="w-full h-full border-2 border-brand-600/30 rounded-2xl flex flex-col items-center justify-center p-8 bg-brand-600/5 backdrop-blur-sm group-hover:bg-brand-600/10 transition-colors">
-                          <Database size={48} className="text-brand-500 mb-4 opacity-50" />
-                          <div className="text-brand-400 font-mono text-[10px] tracking-widest uppercase mb-1">Point_Cloud_Matrix</div>
-                          <div className="font-mono text-[8px] text-brand-300 opacity-40 break-all text-center">
-                             0.231, 0.442, -0.912, 1.0<br/>
-                             0.112, 0.551, -0.882, 0.9<br/>
-                             -0.012, 0.662, -0.771, 0.8
-                          </div>
-                       </div>
-                   </div>
-                   <div className="absolute top-0 right-0 w-48 h-48 bg-brand-600/20 rounded-full blur-[80px] -mr-24 -mt-24 group-hover:bg-brand-600/30 transition-all duration-700"></div>
+                <div className="relative group">
+                  {/* Glassmorphism Background Glow */}
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-brand-500/10 to-accent-cyan/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  {/* Main Image Container */}
+                  <div className="relative rounded-[2.5rem] overflow-hidden bg-white border border-slate-100 shadow-xl transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-brand-500/10 group-hover:-translate-y-2">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    
+                    {/* Glossy Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/20 via-transparent to-white/10 opacity-60"></div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -10,6 +10,7 @@ const DataClassification = () => {
   const classificationServices = [
     {
       title: "Text Classification",
+      image: "/dataclassification/text-classification.png",
       description:
         "Organizing raw text into meaningful categories like intent, topic, sentiment, and document type. Essential for enterprise search, helpdesk automation, and brand monitoring.",
       features: [
@@ -21,6 +22,7 @@ const DataClassification = () => {
     },
     {
       title: "Image Classification",
+      image: "/dataclassification/image-classification.png",
       description:
         "Grouping images into specific sets based on object category, product type, or scene context. High-accuracy labels for visual search and inventory management.",
       features: [
@@ -32,6 +34,7 @@ const DataClassification = () => {
     },
     {
       title: "Audio Classification",
+      image: "/dataclassification/audio-classification.png",
       description:
         "Processing sound data to identify spoken language, speaker types, and distinct acoustic events. Powering intelligence for IVR and security monitoring.",
       features: [
@@ -43,6 +46,7 @@ const DataClassification = () => {
     },
     {
       title: "Video Classification",
+      image: "/dataclassification/video-classification.png",
       description:
         "Assigning context and activity labels to video sequences. Identifying what is happening and the intent behind actions at both the frame and sequence level.",
       features: [
@@ -54,6 +58,7 @@ const DataClassification = () => {
     },
     {
       title: "Multi-Label & Hierarchical",
+      image: "/dataclassification/multi-label.png",
       description:
         "Handling complex datasets that belong to multiple categories or exist within nested taxonomies. Specialized for enterprise-grade data architecture.",
       features: [
@@ -65,6 +70,7 @@ const DataClassification = () => {
     },
     {
       title: "Custom Taxonomy Design",
+      image: "/dataclassification/taxonomy-design.png",
       description:
         "Collaboration on proprietary ontology and taxonomy building to ensure the labeled data perfectly fits your internal model architectures.",
       features: [
@@ -229,18 +235,22 @@ const DataClassification = () => {
                 </div>
               </div>
               <div className="flex-1 w-full max-w-lg">
-                 <div className="relative group">
-                    <div className="aspect-[16/9] bg-slate-950 rounded-[2.5rem] p-10 flex flex-col justify-center relative overflow-hidden shadow-sm border border-slate-800">
-                        <div className="text-brand-600 font-mono text-[10px] tracking-widest uppercase mb-4">Structured_Output_JSON</div>
-                        <div className="space-y-3 font-mono text-sm">
-                            <div className="text-white"><span className="text-brand-400">"label"</span>: <span className="text-green-400">"{service.title.split(' ')[0]}"</span></div>
-                            <div className="text-white"><span className="text-brand-400">"metadata"</span>: {"{"}</div>
-                            <div className="pl-4 text-white"><span className="text-brand-400">"confidence"</span>: <span className="text-accent-cyan">0.998</span></div>
-                            <div className="text-white">{"}"}</div>
-                        </div>
-                       <div className="absolute inset-0 bg-gradient-to-tr from-brand-600/10 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    </div>
-                 </div>
+                <div className="relative group">
+                  {/* Glassmorphism Background Glow */}
+                  <div className="absolute -inset-4 bg-gradient-to-tr from-brand-500/10 to-accent-cyan/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  {/* Main Image Container */}
+                  <div className="relative rounded-[2.5rem] overflow-hidden bg-white border border-slate-100 shadow-xl transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-brand-500/10 group-hover:-translate-y-2">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    
+                    {/* Glossy Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/20 via-transparent to-white/10 opacity-60"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
