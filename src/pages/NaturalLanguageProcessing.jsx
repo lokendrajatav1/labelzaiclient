@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, CheckCircle2, ChevronRight, Sparkles, Languages, MessageSquare, ShieldCheck, Zap, Globe, Lock } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronRight, Sparkles, Languages, MessageSquare, ShieldCheck, Zap, Globe, Lock, MessageCircle, FileText, Search, ShieldAlert, Key, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const NaturalLanguageProcessing = () => {
@@ -10,306 +10,259 @@ const NaturalLanguageProcessing = () => {
   const annotationServices = [
     {
       title: "Text Classification & Categorization",
-      image: "/nlpservice/text-classification.png",
       description:
         "We categorize and label unstructured text into predefined topics, intents, priority levels, and industry domains. This structured data powers recommendation engines, automated ticketing systems, and content organization tools.",
-      features: [
-        "Topic Identification",
-        "Intent Mapping",
-        "Priority Assignment"
-      ]
+      image: "/nlpservice/text-classification.png",
+      features: ["Topic Identification", "Intent Mapping", "Priority Assignment"],
+      icon: <FileText />
     },
     {
       title: "Named Entity Recognition (NER)",
-      image: "/nlpservice/ner.png",
       description:
         "Our experts identify and extract specific entities from text, including people, locations, organizations, dates, product names, as well as specialized medical and financial terminology. Essential for information extraction and knowledge graph construction.",
-      features: [
-        "Dynamic Entity Extraction",
-        "Domain-Specific Labels",
-        "Entity Linkage Data"
-      ]
+      image: "/nlpservice/ner.png",
+      features: ["Dynamic Entity Extraction", "Domain-Specific Labels", "Entity Linkage Data"],
+      icon: <Target />
     },
     {
       title: "Sentiment & Emotion Analysis",
-      image: "/nlpservice/sentiment-analysis.png",
       description:
         "Detecting the underlying tone and emotional state in human communication. We perform polarity detection (positive/negative/neutral) and provide fine-grained emotional tagging (e.g., frustration, excitement, satisfaction) to help AI systems respond with empathy.",
-      features: [
-        "Polarity Detection",
-        "Fine-Grained Emotion Tagging",
-        "Vocal Nuance Context"
-      ]
+      image: "/nlpservice/sentiment-analysis.png",
+      features: ["Polarity Detection", "Fine-Grained Emotion Tagging", "Vocal Nuance Context"],
+      icon: <Languages />
     },
     {
-      title: "Part-of-Speech (POS) & Syntax Annotation",
-      image: "/nlpservice/pos-annotation.png",
+      title: "Part-of-Speech (POS) & Syntax",
       description:
         "Providing the linguistic building blocks for advanced language models. We label words according to their grammatical function and structural relationship within sentences, enabling machines to parse complex grammar and syntax.",
-      features: [
-        "Grammatical Labeling",
-        "Dependency Parsing",
-        "Structural Text Analysis"
-      ]
+      image: "/nlpservice/pos-annotation.png",
+      features: ["Grammatical Labeling", "Dependency Parsing", "Structural Text Analysis"],
+      icon: <FileText />
     },
     {
       title: "Conversation & Dialogue Annotation",
-      image: "/nlpservice/conversation-annotation.png",
       description:
         "Transforming multi-turn interactions into structured datasets for chatbots and virtual assistants. We track context across turns, label speaker roles, and evaluate response quality to train more coherent conversational agents.",
-      features: [
-        "Multi-Turn Context Tracking",
-        "Speaker Role Assignment",
-        "Response Coherence Evaluation"
-      ]
+      image: "/nlpservice/conversation-annotation.png",
+      features: ["Multi-Turn Context Tracking", "Speaker Role Assignment", "Response Coherence Evaluation"],
+      icon: <MessageCircle />
     },
     {
-      title: "Content Moderation & Toxicity Detection",
-      image: "/nlpservice/content-moderation.png",
+      title: "Content Moderation & Toxicity",
       description:
         "Building safer online environments by labeling harmful, offensive, or policy-violating language. Our annotators provide high-confidence datasets to filter hate speech, harassment, and inappropriate content.",
-      features: [
-        "Policy-Based Filtering",
-        "Harassment Detection",
-        "Safety-First AI Training"
-      ]
+      image: "/nlpservice/content-moderation.png",
+      features: ["Policy-Based Filtering", "Harassment Detection", "Safety-First AI Training"],
+      icon: <ShieldAlert />
     },
     {
       title: "Keyphrase & Summary Tagging",
-      image: "/nlpservice/keyphrase-tagging.png",
       description:
         "Highlighting critical information and generating human-verified summaries within text corpora. This data powers intelligent search systems, knowledge management platforms, and automated document summarization models.",
-      features: [
-        "Critical Information Extraction",
-        "Human-Verified Condensation",
-        "Semantic Search Mapping"
-      ]
+      image: "/nlpservice/keyphrase-tagging.png",
+      features: ["Critical Information Extraction", "Human-Verified Condensation", "Semantic Search Mapping"],
+      icon: <Key />
     }
   ];
 
   return (
-    <div className="bg-white text-slate-900 min-h-screen pb-8 font-sans selection:bg-brand-100 selection:text-brand-900">
-      {/* Hero - Simple & Premium Center Layout */}
-      <div className="relative bg-white overflow-hidden pt-24 pb-16">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-50/60 rounded-full blur-[100px]"></div>
-          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent-cyan/5 rounded-full blur-[100px]"></div>
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-slate-400 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
+    <div className="bg-white text-slate-900 min-h-screen font-sans selection:bg-brand-100 selection:text-brand-900">
+      
+      {/* 1. Hero Section - Bold Case Study Style */}
+      <section className="relative pt-32 md:pt-48 pb-20 overflow-hidden bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center text-center">
+          <div className="flex items-center gap-2 text-slate-600 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
             <Link to="/" className="hover:text-brand-600 transition-colors">Home</Link>
             <ChevronRight size={10} strokeWidth={3} />
             <span>Services</span>
             <ChevronRight size={10} strokeWidth={3} />
-            <span className="text-brand-600">NLP Annotation</span>
+            <span className="text-brand-600 font-bold uppercase">NLP Datasets</span>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-100/50 text-brand-600 text-[11px] font-semibold uppercase tracking-widest mb-6">
-            <Sparkles size={14} />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-600 text-[13px] font-semibold mb-8 border border-brand-100/50 uppercase tracking-widest">
+            <Sparkles size={14} className="animate-pulse" />
             Language Intelligence
           </div>
 
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-6 max-w-4xl">
-            Natural Language Processing (NLP) Annotation Services
+          <h1 className="text-4xl md:text-7xl font-semibold text-slate-900 leading-[1.05] tracking-tight mb-8">
+            Superior NLP <br className="hidden md:block" />
+            <span className="text-brand-600 italic">Annotation</span> Expertise.
           </h1>
           
-          <p className="text-base md:text-lg text-slate-600 font-medium leading-relaxed mb-8 max-w-3xl">
-            Power your AI with high-quality NLP annotation services designed to transform unstructured text and speech into structured, training-ready datasets. Our expert-driven workflows help businesses build intelligent systems that understand human language, context, and intent with precision.
-          </p>
-
-          <p className="text-base text-slate-500 font-medium leading-relaxed mb-10 max-w-3xl">
-            At the core of modern AI, Natural Language Processing (NLP) enables applications such as chatbots, virtual assistants, search engines, sentiment analysis, document automation, and large language models (LLMs). Our scalable annotation solutions ensure accuracy, consistency, and domain relevance across diverse industries.
+          <p className="text-slate-600 text-xl md:text-2xl font-medium leading-relaxed max-w-4xl mx-auto mb-12">
+            Transforming unstructured communication into training-ready datasets. We help machines understand language, context, and intent with human-level nuance.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/contact">
-              <button className="flex items-center gap-3 bg-slate-900 text-white px-10 py-3.5 rounded-full font-semibold text-base hover:bg-brand-600 transition-all hover:shadow-xl hover:shadow-brand-600/20 active:scale-95">
-                <ArrowRight size={18} /> Start a Project
+              <button className="flex items-center gap-3 bg-slate-900 text-white px-10 py-4 rounded-full font-semibold text-base hover:bg-brand-600 transition-all hover:shadow-xl hover:shadow-brand-600/20 active:scale-95">
+                <ArrowRight size={18} /> Scale Your Model
               </button>
             </Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Intro Section - Capabilities */}
-      <div className="relative z-10 -mt-2">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-slate-200/50 border border-slate-100">
-            <div className="max-w-4xl mx-auto">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-[2px] w-10 bg-brand-600"></div>
-                <span className="text-brand-600 text-[11px] font-semibold uppercase tracking-[0.3em]">Capabilities</span>
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl font-semibold text-slate-950 tracking-tight mb-8">
-                Our NLP Annotation Capabilities:
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-                {[
-                  { label: "Text Classification", val: "Topic, intent, & domain labeling" },
-                  { label: "NER Extraction", val: "People, location, orgs, & dates" },
-                  { label: "Sentiment & Emotion", val: "Fine-grained emotional tagging" },
-                  { label: "Intent Detection", val: "Dialogue & goal-oriented mapping" },
-                  { label: "POS & Syntax", val: "Linguistic structural parsing" },
-                  { label: "Entity Relationship", val: "Mapping semantic connections" },
-                  { label: "Toxicity Detection", val: "Policy-violating language filters" },
-                  { label: "Speech-to-Text", val: "Transcription with diarization" }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 group">
-                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-500 ring-4 ring-brand-50 group-hover:scale-125 transition-transform"></div>
-                    <div>
-                      <span className="font-semibold text-slate-900 text-base md:text-lg">{item.label}:</span>
-                      <span className="text-slate-600 text-base md:text-lg ml-2 font-medium">{item.val}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Why Choose Us Section */}
-      <div className="py-20 bg-slate-50/50 mt-16">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-16">Why Choose Our NLP Annotation Services?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: "Expert Linguists", desc: "Domain-trained annotators for multi-industry precision.", icon: <Languages className="text-brand-600" size={24} /> },
-              { title: "Multilingual Datasets", desc: "Native-level accuracy across major global languages.", icon: <Globe className="text-brand-600" size={24} /> },
-              { title: "AI-Assisted Quality", desc: "Multi-level validation protocols for 99%+ precision.", icon: <Zap className="text-brand-600" size={24} /> },
-              { title: "LLM Ready Scale", desc: "Scalable workflows built for training foundational models.", icon: <MessageSquare className="text-brand-600" size={24} /> },
-              { title: "Secure Handling", desc: "Strict confidentiality and data protection protocols.", icon: <Lock className="text-brand-600" size={24} /> },
-              { title: "Compliance Driven", desc: "Secure environment adhering to global data standards.", icon: <ShieldCheck className="text-brand-600" size={24} /> }
-            ].map((item, i) => (
-              <div key={i} className="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all">
-                <div className="w-12 h-12 rounded-2xl bg-brand-50 flex items-center justify-center mb-6 mx-auto">
-                    {item.icon}
+      {/* 2. Context & Highlights - Case Study Style Box */}
+      <section className="py-24 border-t border-slate-50 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="p-12 md:p-16 bg-slate-50 border-2 border-slate-100 rounded-3xl relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-600/5 rounded-full blur-[80px] -mt-24 -mr-24"></div>
+             
+             <div className="relative z-10 flex flex-col lg:flex-row gap-16 lg:gap-24">
+                <div className="w-full lg:w-1/2 space-y-8">
+                   <div className="flex items-center gap-3">
+                      <div className="h-[2px] w-12 bg-brand-600"></div>
+                      <span className="text-brand-600 text-[11px] font-bold uppercase tracking-[0.3em]">Linguistic Mastery</span>
+                   </div>
+                   <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-tight uppercase">
+                     Domain <br /> <span className="text-brand-600 font-bold">In-Context.</span>
+                   </h2>
+                   <p className="text-slate-700 text-xl font-medium leading-relaxed italic">
+                     "Understanding language is about more than words—it's about the nuance of human intent. We provide the linguistic bridge for next-gen LLMs."
+                   </p>
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-3">{item.title}</h3>
-                <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+                
+                <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                   {[
+                     { label: "ENTITIES", val: "Names, Dates, Locations" },
+                     { label: "SENTIMENT", val: "Nuanced Tone Recognition" },
+                     { label: "STRUCTURE", val: "Linguistic Tree Parsing" },
+                     { label: "SECURITY", val: "Toxicity & Policy Filter" }
+                   ].map((item, i) => (
+                     <div key={i} className="p-8 bg-white rounded-3xl border border-slate-100 shadow-sm space-y-2 group hover:border-brand-600 transition-colors">
+                        <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest group-hover:text-brand-600 transition-colors">{item.label}</div>
+                        <div className="text-slate-900 font-bold text-lg tracking-tight">{item.val}</div>
+                     </div>
+                   ))}
+                </div>
+             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Use Cases Section */}
-      <div className="py-20">
-        <div className="max-w-7xl mx-auto px-6">
-            <div className="flex items-center gap-4 mb-16">
-                <div className="h-[1px] flex-1 bg-slate-100"></div>
-                <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 whitespace-nowrap">Industry Use Cases</h2>
-                <div className="h-[1px] flex-1 bg-slate-100"></div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {[
-                    { title: "Customer Support Automation", desc: "Automating ticketing and classification for enterprise helpdesks." },
-                    { title: "Conversational AI", desc: "Training sophisticated chatbots with multi-turn dialogue logic." },
-                    { title: "Voice Assistants", desc: "Intent and entity tagging for seamless voice interactions." },
-                    { title: "Document Intelligence", desc: "Extracting structured data from complex legal and financial text." },
-                    { title: "Recommendation Systems", desc: "Interest and sentiment-based content suggestion datasets." },
-                    { title: "Sentiment Monitoring", desc: "Real-time brand perception and social listening intelligence." }
-                ].map((item, i) => (
-                  <div key={i} className="group relative p-10 bg-white border border-slate-100 rounded-[2.5rem] hover:border-brand-100 hover:shadow-2xl hover:shadow-brand-600/5 transition-all duration-500">
-                      <div className="absolute top-6 right-8 text-slate-100 font-bold text-5xl group-hover:text-brand-50 transition-colors pointer-events-none">0{i + 1}</div>
-                      <div className="relative z-10">
-                        <div className="w-12 h-12 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-                            <Sparkles size={22} />
-                        </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-slate-950 mb-4 tracking-tight leading-tight">{item.title}</h3>
-                        <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed group-hover:text-slate-600 transition-colors">{item.desc}</p>
-                      </div>
+      {/* 3. Deep-Dive Services - Alternating Style */}
+      <section className="py-12 md:py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-32">
+          {annotationServices.map((service, index) => (
+            <div
+              key={index}
+              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-32 items-center`}
+            >
+              {/* Text Part */}
+              <div className="w-full lg:w-1/2 space-y-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 bg-brand-50 text-brand-600 rounded-2xl">
+                       {service.icon}
+                    </div>
+                    <span className="text-brand-600 font-bold text-[11px] uppercase tracking-widest">SERVICE 0{index + 1}</span>
                   </div>
-                ))}
-            </div>
-        </div>
-      </div>
-
-      {/* Services List */}
-      <div className="mt-16 space-y-0">
-        {annotationServices.map((service, index) => (
-          <div
-            key={index}
-            className={`py-12 ${index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50 border-y border-slate-100'}`}
-          >
-            <div className={`max-w-7xl mx-auto px-3 flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-16 items-center`}>
-              <div className="flex-1 space-y-4">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className="w-8 h-[1px] bg-brand-200"></span>
-                    <span className="text-brand-600 font-bold tracking-[0.2em] text-[10px] uppercase">Service 0{index + 1}</span>
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-semibold text-slate-950 leading-tight tracking-tight">
+                  <h2 className="text-3xl md:text-5xl font-semibold text-slate-950 leading-tight tracking-tight uppercase">
                     {service.title}
                   </h2>
                 </div>
-                <p className="text-slate-900 text-sm md:text-base leading-relaxed font-semibold max-w-xl">
+                
+                <p className="text-slate-600 text-lg md:text-xl leading-relaxed font-medium opacity-90">
                   {service.description}
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4 pt-2">
-                  {service.features?.map((feature, fIndex) => (
-                    <div key={fIndex} className="flex items-center gap-3 group/feat">
-                      <div className="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 border border-brand-100">
-                        <CheckCircle2 size={12} strokeWidth={3} />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 pt-4">
+                  {service.features.map((feature, fIndex) => (
+                    <div key={fIndex} className="flex items-center gap-3 group">
+                      <div className="w-6 h-6 rounded-full bg-slate-900 flex items-center justify-center text-white text-[10px] font-bold group-hover:bg-brand-600 transition-colors shadow-lg shadow-slate-900/10">
+                        {fIndex + 1}
                       </div>
-                      <span className="text-slate-700 font-semibold text-xs tracking-tight">{feature}</span>
+                      <span className="text-slate-800 font-bold text-sm tracking-tight">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="flex-1 w-full max-w-lg">
-                <div className="relative group">
-                  {/* Glassmorphism Background Glow */}
-                  <div className="absolute -inset-4 bg-gradient-to-tr from-brand-500/10 to-accent-cyan/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  
-                  {/* Main Image Container */}
-                  <div className="relative rounded-[2.5rem] overflow-hidden bg-white border border-slate-100 shadow-xl transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-brand-500/10 group-hover:-translate-y-2">
-                    <img 
-                      src={service.image} 
-                      alt={service.title}
-                      className="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-110"
-                    />
-                    
-                    {/* Glossy Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/20 via-transparent to-white/10 opacity-60"></div>
-                  </div>
-                </div>
+
+              {/* Image Part - Premium Frame */}
+              <div className="w-full lg:w-1/2">
+                 <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-tr from-brand-600/10 to-accent-cyan/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="relative rounded-2xl overflow-hidden transition-transform duration-700 group-hover:-translate-y-2">
+                       <img 
+                          src={service.image} 
+                          alt={service.title} 
+                          className="w-full aspect-[4/3] object-cover transition-transform duration-1000 group-hover:scale-110"
+                       />
+                    </div>
+                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Workflow Section */}
-      <div className="py-16 bg-slate-950 overflow-hidden relative">
+      {/* 4. Workflow Section - Case Study Style (Dark) */}
+      <section className="py-24 md:py-32 bg-slate-950 text-white overflow-hidden relative">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:40px_40px]"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-3 relative z-10 text-center">
-          <div className="mb-10">
-            <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-3">NLP Delivery Pipeline</h2>
-            <p className="text-slate-400 text-base max-w-xl mx-auto">Structured language data for robust machine understanding.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {[
-              { step: "01", title: "Guidelines", desc: "Setting linguistic and domain parameters." },
-              { step: "02", title: "Annotation", desc: "Multi-level tagging by language experts." },
-              { step: "03", title: "Consensus", desc: "Resolving disagreements via adjudication." },
-              { step: "04", title: "Validation", desc: "Final quality check against gold-standard data." }
-            ].map((s, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 p-10 rounded-[2.5rem] text-left group hover:bg-white/10 transition-colors">
-                <div className="text-brand-400 font-bold mb-8 text-sm tracking-widest">{s.step}</div>
-                <h3 className="text-white text-xl font-semibold mb-4 leading-tight">{s.title}</h3>
-                <p className="text-slate-200 text-sm leading-relaxed font-medium">{s.desc}</p>
-                <div className="mt-4 h-1 w-0 bg-brand-600 group-hover:w-full transition-all duration-500"></div>
-              </div>
-            ))}
+        
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+             <div className="space-y-8">
+                <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight leading-[1.1] uppercase">
+                   Linguistic <br /><span className="text-brand-400 font-bold italic">Refinement</span> <br /> Pipeline.
+                </h2>
+                <div className="h-2 w-24 bg-brand-500"></div>
+                <p className="text-slate-300 text-xl font-medium leading-relaxed max-w-xl italic opacity-80">
+                  "Scaling language data requires domain-trained experts. We verify every label through a multi-stage consensus workflow for ultimate reliability."
+                </p>
+                
+                <div className="grid grid-cols-2 gap-12 pt-8">
+                    <div className="space-y-3">
+                       <div className="text-5xl font-bold text-brand-400 font-mono tracking-tighter">99%+</div>
+                       <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Precision Rate</div>
+                    </div>
+                    <div className="space-y-3">
+                       <div className="text-5xl font-bold text-brand-400 font-mono tracking-tighter">50+</div>
+                       <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Global Dialects</div>
+                    </div>
+                </div>
+             </div>
+             
+             <div className="grid grid-cols-1 gap-4">
+                {[
+                   { step: "01", title: "Guideline Alignment", val: "Linguistic Logic Setup" },
+                   { step: "02", title: "Expert Annotation", label: "Domain-Trained Review" },
+                   { step: "03", title: "Consensus Check", label: "Multi-Review Adjudication" },
+                   { step: "04", title: "Metadata Audit", label: "Structure Verification" }
+                ].map((item, i) => (
+                   <div key={i} className="flex justify-between items-center p-8 bg-slate-900 border border-slate-800 rounded-3xl group hover:border-brand-600 transition-all">
+                      <div className="space-y-1">
+                         <div className="text-brand-400 font-mono text-xs font-bold uppercase tracking-widest opacity-60">Phase 0{i+1}</div>
+                         <div className="text-white font-bold text-xl tracking-tight uppercase">{item.title}</div>
+                      </div>
+                      <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest group-hover:text-brand-400 transition-colors">
+                         {item.val || item.label}
+                      </div>
+                   </div>
+                ))}
+             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* 5. Bottom CTA */}
+      <section className="py-32 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
+           <h2 className="text-4xl md:text-7xl font-semibold text-slate-900 leading-[1.1] tracking-tight uppercase">
+             Ready to Build <br /> <span className="text-brand-600 italic">Advanced</span> Intelligence.
+           </h2>
+           <div className="pt-8">
+             <Link to="/contact" className="inline-flex items-center gap-4 bg-slate-900 text-white px-12 py-6 text-xl font-bold hover:bg-brand-600 transition-all rounded-full shadow-2xl shadow-slate-900/20 active:scale-95">
+               Contact Our Experts <ArrowRight size={24} />
+             </Link>
+           </div>
+        </div>
+      </section>
+
     </div>
   );
 };

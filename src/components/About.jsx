@@ -41,9 +41,14 @@ const About = () => {
               Powering the next <span className="text-brand-600">generation</span> of Artificial Intelligence
             </h2>
             
-            <p className="text-slate-500 text-lg leading-relaxed mb-8 font-medium">
-              At LabelzAI, we believe that great AI begins with great data. We deliver precision-engineered training data that transforms complex, unstructured information into high-quality, model-ready datasets that drive real-world impact.
-            </p>
+            <div className="space-y-6 text-slate-500 text-[17px] leading-relaxed mb-8 font-medium">
+              <p>
+                We combine advanced annotation tools with trained experts to deliver high-quality, consistent, and scalable datasets that help your AI models see, read, listen, and think more effectively. From computer vision and natural language processing to LiDAR 3D annotation and audio intelligence, our team ensures that every labeled data point contributes to smarter, safer, and more reliable AI outcomes.
+              </p>
+              <p>
+                Whether you need a small pilot or large-scale data production, our flexible teams can quickly scale to match your volume and timeline — without compromising accuracy or security. With cost-efficient operations, dedicated project management, and seamless integration with your data formats and tools, LabelzAI helps you eliminate data bottlenecks and bring AI solutions to market faster.
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 w-full mb-10">
               {points.map((point, index) => (

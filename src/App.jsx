@@ -22,6 +22,14 @@ import MediaEntertainment from './pages/MediaEntertainment';
 import EducationEdtech from './pages/EducationEdtech';
 import Manufacturing from './pages/Manufacturing';
 import Agriculture from './pages/Agriculture';
+import AutonomousMobilityCaseStudy from './pages/case-studies/AutonomousMobility';
+import EcommerceRetailCaseStudy from './pages/case-studies/EcommerceRetail';
+import AgricultureAgritechCaseStudy from './pages/case-studies/AgricultureAgritech';
+import MediaEntertainmentCaseStudy from './pages/case-studies/MediaEntertainment';
+import EducationEdtechCaseStudy from './pages/case-studies/EducationEdtech';
+import ManufacturingIndustrialCaseStudy from './pages/case-studies/ManufacturingIndustrial';
+import MedicalHealthcareCaseStudy from './pages/case-studies/MedicalHealthcare';
+import About from './pages/About';
 
 function App() {
   const location = useLocation();
@@ -32,6 +40,7 @@ function App() {
       {!isAdmin && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/services/image-annotation" element={<ImageAnnotation />} />
         <Route path="/services/video-annotation" element={<VideoAnnotation />} />
         <Route path="/services/audio-annotation" element={<AudioAnnotation />} />
@@ -58,6 +67,15 @@ function App() {
         <Route path="/industries/education-edtech" element={<EducationEdtech />} />
         <Route path="/industries/manufacturing" element={<Manufacturing />} />
         <Route path="/industries/agriculture" element={<Agriculture />} />
+        
+        {/* Case Studies Routes */}
+        <Route path="/case-studies/autonomous" element={<AutonomousMobilityCaseStudy />} />
+        <Route path="/case-studies/ecommerce" element={<EcommerceRetailCaseStudy />} />
+        <Route path="/case-studies/agriculture" element={<AgricultureAgritechCaseStudy />} />
+        <Route path="/case-studies/media" element={<MediaEntertainmentCaseStudy />} />
+        <Route path="/case-studies/education" element={<EducationEdtechCaseStudy />} />
+        <Route path="/case-studies/manufacturing" element={<ManufacturingIndustrialCaseStudy />} />
+        <Route path="/case-studies/medical" element={<MedicalHealthcareCaseStudy />} />
       </Routes>
       {!isAdmin && <Footer />}
     </div>

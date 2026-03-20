@@ -73,7 +73,7 @@ const AdminLogin = () => {
         </div>
 
         {/* Login Card */}
-        <div className="bg-white rounded-[2.5rem] p-8 md:p-10 shadow-2xl shadow-slate-200/60 border border-slate-100 transition-all duration-500 hover:shadow-brand-500/5">
+        <div className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl shadow-slate-200/60 border border-slate-100 transition-all duration-500 hover:shadow-brand-500/5">
           {error && (
             <div className="mb-6 p-4 bg-red-50 border border-red-100 rounded-2xl flex items-center gap-3 animate-shake">
               <AlertCircle className="text-red-500 shrink-0" size={20} />
@@ -90,9 +90,9 @@ const AdminLogin = () => {
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div className="space-y-2">
-              <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">Username</label>
+              <label className="text-[11px] font-bold text-slate-600 uppercase tracking-widest ml-1">Username</label>
               <div className="relative group">
-                <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-brand-500">
+                <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-600 transition-colors group-focus-within:text-brand-500">
                   <User size={20} />
                 </div>
                 <input 
@@ -102,15 +102,15 @@ const AdminLogin = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   disabled={loading || success}
-                  className="w-full pl-14 pr-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 outline-none transition-all focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 font-semibold text-slate-900 placeholder:text-slate-300"
+                  className="w-full pl-14 pr-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 outline-none transition-all focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 font-semibold text-slate-900 placeholder:text-slate-500"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-[11px] font-bold text-slate-400 uppercase tracking-widest ml-1">Secret Key</label>
+              <label className="text-[11px] font-bold text-slate-600 uppercase tracking-widest ml-1">Secret Key</label>
               <div className="relative group">
-                <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-brand-500">
+                <div className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-600 transition-colors group-focus-within:text-brand-500">
                   <Lock size={20} />
                 </div>
                 <input 
@@ -120,7 +120,7 @@ const AdminLogin = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   disabled={loading || success}
-                  className="w-full pl-14 pr-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 outline-none transition-all focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 font-semibold text-slate-900 placeholder:text-slate-300"
+                  className="w-full pl-14 pr-6 py-4 rounded-2xl bg-slate-50 border border-slate-100 outline-none transition-all focus:bg-white focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 font-semibold text-slate-900 placeholder:text-slate-500"
                 />
               </div>
             </div>
@@ -152,7 +152,7 @@ const AdminLogin = () => {
 
         {/* Support Link */}
         <div className="text-center mt-8">
-          <p className="text-slate-400 text-sm font-medium">
+          <p className="text-slate-600 text-sm font-medium">
             Authorized access only. Technical issues?  
             <a href="mailto:support@labelzai.tech" className="text-brand-600 hover:text-brand-700 ml-1 font-semibold transition-colors">Contact Support</a>
           </p>

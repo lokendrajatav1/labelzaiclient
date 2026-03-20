@@ -110,7 +110,7 @@ const Admin = () => {
               className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-semibold transition-all ${
                 activeTab === tab.id
                   ? 'bg-brand-500 text-white shadow-md shadow-brand-500/20'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-900'
+                  : 'text-slate-600 hover:text-white hover:bg-slate-900'
               }`}
             >
               <span className={`${activeTab === tab.id ? 'opacity-100' : 'opacity-70'}`}>
@@ -122,7 +122,7 @@ const Admin = () => {
         </nav>
 
         <div className="p-4 border-t border-slate-800/60 space-y-2">
-          <a href="/" className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-900 transition-all">
+          <a href="/" className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-600 hover:text-white hover:bg-slate-900 transition-all">
             <ExternalLink size={16} />
             View Live Site
           </a>
@@ -263,12 +263,12 @@ function ContactsTab({ showToast }) {
           { label: 'Total', val: enquiries.length, icon: <Mail size={18} />, color: 'text-slate-600' },
           { label: 'New', val: newCount, icon: <Inbox size={18} />, color: 'text-blue-600' },
           { label: 'Replied', val: enquiries.filter(e => e.status === 'replied').length, icon: <CheckCircle2 size={18} />, color: 'text-emerald-600' },
-          { label: 'Closed', val: enquiries.filter(e => e.status === 'closed').length, icon: <Clock size={18} />, color: 'text-slate-400' },
+          { label: 'Closed', val: enquiries.filter(e => e.status === 'closed').length, icon: <Clock size={18} />, color: 'text-slate-600' },
         ].map((s, i) => (
           <div key={i} className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
             <div className={`${s.color} mb-2`}>{s.icon}</div>
             <div className="text-2xl font-semibold text-slate-900">{s.val}</div>
-            <div className="text-xs text-slate-400 font-semibold uppercase tracking-widest">{s.label}</div>
+            <div className="text-xs text-slate-600 font-semibold uppercase tracking-widest">{s.label}</div>
           </div>
         ))}
       </div>
@@ -294,11 +294,11 @@ function ContactsTab({ showToast }) {
       {/* Table */}
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
         {loading ? (
-          <div className="flex items-center justify-center py-20 text-slate-400">
+          <div className="flex items-center justify-center py-20 text-slate-600">
             <Loader2 size={24} className="animate-spin mr-3" /> Loading enquiries...
           </div>
         ) : enquiries.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 text-slate-400">
+          <div className="flex flex-col items-center justify-center py-20 text-slate-600">
             <Inbox size={40} className="mb-3 text-slate-300" />
             <p className="font-semibold">No enquiries found</p>
           </div>
@@ -307,12 +307,12 @@ function ContactsTab({ showToast }) {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-slate-100">
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Name</th>
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Email</th>
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Service</th>
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Status</th>
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Date</th>
-                  <th className="text-right px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Actions</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Name</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Email</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Service</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Status</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Date</th>
+                  <th className="text-right px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -324,7 +324,7 @@ function ContactsTab({ showToast }) {
                     <td className="px-6 py-4 text-sm text-slate-600">{enq.email}</td>
                     <td className="px-6 py-4 text-xs font-semibold text-slate-500">{serviceLabels[enq.service] || enq.service}</td>
                     <td className="px-6 py-4"><StatusBadge status={enq.status} /></td>
-                    <td className="px-6 py-4 text-xs text-slate-400 font-medium">{fmtDate(enq.createdAt)}</td>
+                    <td className="px-6 py-4 text-xs text-slate-600 font-medium">{fmtDate(enq.createdAt)}</td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                         <button onClick={() => setSelected(enq)} className="p-2 rounded-lg hover:bg-brand-50 text-brand-500 transition-all" title="View">
@@ -354,30 +354,30 @@ function ContactsTab({ showToast }) {
             <div className="p-6 space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Name</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Name</p>
                   <p className="text-sm font-semibold text-slate-900">{selected.firstName} {selected.lastName}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Email</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Email</p>
                   <p className="text-sm font-semibold text-slate-900">{selected.email}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Service</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Service</p>
                   <p className="text-sm font-semibold text-slate-900">{serviceLabels[selected.service] || selected.service}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Submitted</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Submitted</p>
                   <p className="text-sm font-semibold text-slate-900">{fmtDate(selected.createdAt)}</p>
                 </div>
               </div>
               <div>
-                <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-2">Message</p>
+                <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-2">Message</p>
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 text-sm text-slate-700 leading-relaxed">
                   {selected.message}
                 </div>
               </div>
               <div>
-                <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-2">Update Status</p>
+                <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-2">Update Status</p>
                 <div className="flex flex-wrap gap-2">
                   {['new', 'read', 'replied', 'closed'].map((s) => (
                     <button
@@ -586,7 +586,7 @@ function JobsTab({ showToast }) {
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div className="flex items-center gap-3">
-          <div className="text-xs text-slate-400 font-semibold uppercase tracking-widest">
+          <div className="text-xs text-slate-600 font-semibold uppercase tracking-widest">
             {jobs.length} Job{jobs.length !== 1 ? 's' : ''} Total
           </div>
         </div>
@@ -605,11 +605,11 @@ function JobsTab({ showToast }) {
 
       {/* Jobs Grid */}
       {loading ? (
-        <div className="flex items-center justify-center py-20 text-slate-400">
+        <div className="flex items-center justify-center py-20 text-slate-600">
           <Loader2 size={24} className="animate-spin mr-3" /> Loading jobs...
         </div>
       ) : jobs.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 text-slate-400 bg-white rounded-2xl border border-slate-100">
+        <div className="flex flex-col items-center justify-center py-20 text-slate-600 bg-white rounded-2xl border border-slate-100">
           <Briefcase size={40} className="mb-3 text-slate-300" />
           <p className="font-semibold mb-4">No jobs found</p>
           <button onClick={openCreate} className="px-6 py-2.5 bg-brand-500 text-white rounded-xl font-semibold text-sm hover:bg-brand-600 transition-all">
@@ -638,14 +638,14 @@ function JobsTab({ showToast }) {
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-2 leading-tight">{job.title}</h3>
                 <p className="text-xs text-slate-500 line-clamp-2 mb-4 leading-relaxed">{job.description}</p>
-                <div className="flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                <div className="flex flex-wrap gap-2 text-[10px] font-semibold uppercase tracking-widest text-slate-600">
                   <span className="flex items-center gap-1"><MapPin size={10} /> {job.workMode}</span>
                   <span className="flex items-center gap-1"><Clock size={10} /> {job.engagement}</span>
                   <span className="flex items-center gap-1"><DollarSign size={10} /> {job.compensation}</span>
                 </div>
               </div>
               <div className="px-6 py-3 border-t border-slate-50 flex items-center justify-between bg-slate-50/50">
-                <span className="text-[10px] text-slate-400 font-semibold">ID: {job.jobId}</span>
+                <span className="text-[10px] text-slate-600 font-semibold">ID: {job.jobId}</span>
                 <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button onClick={() => openEdit(job)} className="p-2 rounded-lg hover:bg-brand-50 text-brand-500 transition-all" title="Edit">
                     <Edit3 size={14} />
@@ -952,7 +952,7 @@ function ApplicationsTab({ showToast }) {
         ].map((s, i) => (
           <div key={i} className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm text-center">
             <div className={`text-2xl font-semibold ${s.color}`}>{s.val}</div>
-            <div className="text-[10px] text-slate-400 font-semibold uppercase tracking-widest mt-1">{s.label}</div>
+            <div className="text-[10px] text-slate-600 font-semibold uppercase tracking-widest mt-1">{s.label}</div>
           </div>
         ))}
       </div>
@@ -963,7 +963,7 @@ function ApplicationsTab({ showToast }) {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-300" size={16} />
           <input
             type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-500/20 placeholder:text-slate-300"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-brand-500/20 placeholder:text-slate-500"
             placeholder="Search name, email, job..."
           />
         </div>
@@ -987,11 +987,11 @@ function ApplicationsTab({ showToast }) {
       {/* Table */}
       <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
         {loading ? (
-          <div className="flex items-center justify-center py-20 text-slate-400">
+          <div className="flex items-center justify-center py-20 text-slate-600">
             <Loader2 size={24} className="animate-spin mr-3" /> Loading applications...
           </div>
         ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-20 text-slate-400">
+          <div className="flex flex-col items-center justify-center py-20 text-slate-600">
             <Users size={40} className="mb-3 text-slate-300" />
             <p className="font-semibold">No applications found</p>
           </div>
@@ -1000,11 +1000,11 @@ function ApplicationsTab({ showToast }) {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-slate-100">
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Applicant</th>
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Position</th>
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Status</th>
-                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Date</th>
-                  <th className="text-right px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Actions</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Applicant</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Position</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Status</th>
+                  <th className="text-left px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Date</th>
+                  <th className="text-right px-6 py-4 text-[10px] font-semibold uppercase tracking-widest text-slate-600">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -1012,11 +1012,11 @@ function ApplicationsTab({ showToast }) {
                   <tr key={app._id} className="border-b border-slate-50 hover:bg-slate-50/50 transition-colors group">
                     <td className="px-6 py-4">
                       <p className="font-semibold text-slate-900 text-sm">{app.fullName}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{app.email}</p>
+                      <p className="text-xs text-slate-600 mt-0.5">{app.email}</p>
                     </td>
                     <td className="px-6 py-4 text-sm font-medium text-slate-700">{app.jobTitle}</td>
                     <td className="px-6 py-4"><StatusBadge status={app.status} type="application" /></td>
-                    <td className="px-6 py-4 text-xs text-slate-400 font-medium">{fmtDate(app.createdAt)}</td>
+                    <td className="px-6 py-4 text-xs text-slate-600 font-medium">{fmtDate(app.createdAt)}</td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                         <button onClick={() => setSelected(app)} className="p-2 rounded-lg hover:bg-brand-50 text-brand-500 transition-all" title="View">
@@ -1051,27 +1051,27 @@ function ApplicationsTab({ showToast }) {
             <div className="p-6 space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Name</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Name</p>
                   <p className="text-sm font-semibold text-slate-900">{selected.fullName}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Email</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Email</p>
                   <p className="text-sm font-semibold text-slate-900">{selected.email}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Phone</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Phone</p>
                   <p className="text-sm font-semibold text-slate-900">{selected.phone}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Position</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Position</p>
                   <p className="text-sm font-semibold text-slate-900">{selected.jobTitle}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Experience</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Experience</p>
                   <p className="text-sm font-semibold text-slate-900">{selected.experienceYears || '—'}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Submitted</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-1">Submitted</p>
                   <p className="text-sm font-semibold text-slate-900">{fmtDate(selected.createdAt)}</p>
                 </div>
               </div>
@@ -1098,7 +1098,7 @@ function ApplicationsTab({ showToast }) {
               {/* Cover Letter */}
               {selected.coverLetter && (
                 <div>
-                  <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-2">Cover Letter</p>
+                  <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-2">Cover Letter</p>
                   <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 text-sm text-slate-700 leading-relaxed">
                     {selected.coverLetter}
                   </div>
@@ -1107,7 +1107,7 @@ function ApplicationsTab({ showToast }) {
 
               {/* Status Update */}
               <div>
-                <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-2">Update Status</p>
+                <p className="text-[10px] font-semibold text-slate-600 uppercase tracking-widest mb-2">Update Status</p>
                 <div className="flex flex-wrap gap-2">
                   {['pending', 'reviewed', 'shortlisted', 'rejected', 'hired'].map((s) => (
                     <button

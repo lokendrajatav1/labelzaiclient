@@ -9,41 +9,31 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-950 text-white pt-10 md:pt-20 pb-10 font-sans border-t border-slate-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Brand Column */}
-          <div className="space-y-8">
-            <Link
-              to="/"
-              className="flex items-center gap-2 text-2xl font-semibold tracking-tighter text-white"
-            >
+    <footer className="bg-slate-950 text-white pt-16 md:pt-24 pb-12 font-sans border-t border-slate-900">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-12 mb-20">
+          
+          {/* 1. Brand Section */}
+          <div className="space-y-8 lg:col-span-1">
+            <Link to="/" className="inline-block">
               <img
                 src="/logo.png"
                 alt="LabelzAI"
-                className="h-12 w-auto opacity-100 brightness-0 invert"
+                className="h-12 w-auto brightness-0 invert opacity-90"
               />
             </Link>
-            <p className="text-slate-400 text-[15px] font-medium leading-relaxed max-w-xs">
-              Empowering AI growth with high-precision data labeling and
-              infrastructure. Turning complex data into high-quality,
-              model-ready datasets.
+            <p className="text-slate-300 text-sm font-medium leading-relaxed italic opacity-80">
+              Transforming complex raw data into high-fidelity AI training sets through global human intelligence.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {[
-                {
-                  icon: <Linkedin size={20} />,
-                  href: "https://linkedin.com",
-                },
-                {
-                  icon: <Instagram size={20} />,
-                  href: "#",
-                },
+                { icon: <Linkedin size={18} />, href: "https://linkedin.com" },
+                { icon: <Instagram size={18} />, href: "#" }
               ].map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
-                  className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all duration-300 shadow-lg"
+                  className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center text-slate-300 hover:bg-brand-600 hover:text-white transition-all duration-300 border border-slate-800"
                 >
                   {social.icon}
                 </a>
@@ -51,69 +41,126 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* 2. Platforms */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-8">
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-400 mb-8">
               Platform
             </h3>
             <ul className="space-y-4">
               {[
-                { name: "Home", href: "/" },
-                { name: "About Us", href: "/#about" },
-                { name: "Services", href: "/#services" },
-                { name: "Careers", href: "/career" },
-                { name: "Contact", href: "/contact" },
+                { name: "About LabelzAI", href: "/about" },
+                { name: "Global Careers", href: "/career" },
+                { name: "Get in Touch", href: "/contact" }
               ].map((link, idx) => (
                 <li key={idx}>
                   <Link
                     to={link.href}
-                    className="text-slate-400 hover:text-white transition-all text-[15px] font-medium flex items-center gap-2 group"
+                    className="relative text-slate-400 hover:text-white transition-all duration-300 text-sm font-medium group inline-flex"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-600 scale-0 group-hover:scale-100 transition-transform"></span>
                     {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-500 group-hover:w-full transition-all duration-300 overflow-hidden"></span>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Our Products */}
+          {/* 3. Core Solutions */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-8">
-              Our Solutions
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-400 mb-8">
+              Solutions
             </h3>
             <ul className="space-y-4">
               {[
-                "Image Annotation",
-                "Video Annotation",
-                "Audio Annotation",
-                "NLP Datasets",
-                "Medical AI Labeling"
-              ].map((name, idx) => (
+                { name: "Image Annotation", href: "/services/image-annotation" },
+                { name: "Video Annotation", href: "/services/video-annotation" },
+                { name: "Audio Annotation", href: "/services/audio-annotation" },
+                { name: "NLP & Text Data", href: "/services/nlp-datasets" },
+                { name: "Lidar & 3D Point", href: "/services/lidar-3d" },
+                { name: "Multimodal Data", href: "/services/multimodal-annotation" },
+                { name: "Data Classification", href: "/services/data-classification" }
+              ].map((link, idx) => (
                 <li key={idx}>
-                  <a
-                    href="#services"
-                    className="text-slate-400 hover:text-white transition-colors text-[15px] font-medium"
+                  <Link
+                    to={link.href}
+                    className="relative text-slate-400 hover:text-white transition-all duration-300 text-sm font-medium group inline-flex"
                   >
-                    {name}
-                  </a>
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-500 group-hover:w-full transition-all duration-300 overflow-hidden"></span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* 4. Industries */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-8">
-              Get in Touch
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-400 mb-8">
+              Industries
+            </h3>
+            <ul className="space-y-4">
+              {[
+                { name: "Artificial Intelligence", href: "/industries/artificial-intelligence" },
+                { name: "Autonomous Vehicles", href: "/industries/autonomous-vehicles" },
+                { name: "Medical & Health", href: "/industries/healthcare-lifesciences" },
+                { name: "Retail & E-Com", href: "/industries/ecommerce-retail" },
+                { name: "Media & Entertain", href: "/industries/media-entertainment" },
+                { name: "Manufacturing", href: "/industries/manufacturing" },
+                { name: "Agriculture Tech", href: "/industries/agriculture" },
+                { name: "Education & EdTech", href: "/industries/education-edtech" }
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={link.href}
+                    className="relative text-slate-400 hover:text-white transition-all duration-300 text-sm font-medium group inline-flex"
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-500 group-hover:w-full transition-all duration-300 overflow-hidden"></span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 5. Case Studies */}
+          <div>
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-400 mb-8">
+              Case Studies
+            </h3>
+            <ul className="space-y-4">
+              {[
+                { name: "Autonomous Mobility", href: "/case-studies/autonomous" },
+                { name: "E-commerce & Retail", href: "/case-studies/ecommerce" },
+                { name: "AgriTech precision", href: "/case-studies/agriculture" },
+                { name: "Media & Moderation", href: "/case-studies/media" },
+                { name: "EdTech Learning", href: "/case-studies/education" },
+                { name: "Industrial Safety", href: "/case-studies/manufacturing" },
+                { name: "Medical Diagnosis", href: "/case-studies/medical" }
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={link.href}
+                    className="relative text-slate-400 hover:text-white transition-all duration-300 text-sm font-medium group inline-flex"
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-500 group-hover:w-full transition-all duration-300 overflow-hidden"></span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 6. Contact Info */}
+          <div className="space-y-8">
+            <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-400 mb-8">
+              Contact Us
             </h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin size={20} className="text-brand-500 mt-1 shrink-0" />
                 <p className="text-slate-400 text-sm leading-relaxed font-medium">
-                  Baghbahara Road, Kutchhari Chowk,<br />
-                  Opp. Hanuman Mandir,<br />
-                  Mahasamund, CG - 493445
+                  Baghbahara Road, Mahasamund <br />
+                  Chhattisgarh – 493445
                 </p>
               </div>
 
@@ -121,7 +168,7 @@ const Footer = () => {
                 <Mail size={20} className="text-brand-500 shrink-0" />
                 <a
                   href="mailto:hello@labelzaitech.com"
-                  className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  className="text-slate-300 hover:text-white transition-colors text-sm font-bold"
                 >
                   hello@labelzaitech.com
                 </a>

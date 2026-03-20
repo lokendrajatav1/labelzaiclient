@@ -184,13 +184,13 @@ const Career = () => {
         {/* Search & Filter bar */}
         <div className="bg-white rounded-2xl md:rounded-[2rem] p-4 shadow-2xl shadow-slate-200/50 mb-12 flex items-center gap-4">
           <div className="relative flex-1">
-             <Search size={22} className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400" />
+             <Search size={22} className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-600" />
              <input 
                type="text" 
                placeholder="Search open roles or categories..." 
                value={searchQuery}
                onChange={(e) => setSearchQuery(e.target.value)}
-               className="w-full pl-14 pr-6 py-4 rounded-xl border-none focus:ring-0 text-slate-900 font-semibold text-lg placeholder:text-slate-300 outline-none"
+               className="w-full pl-14 pr-6 py-4 rounded-xl border-none focus:ring-0 text-slate-900 font-semibold text-lg placeholder:text-slate-500 outline-none"
              />
           </div>
         </div>
@@ -200,7 +200,7 @@ const Career = () => {
           {loadingJobs ? (
             <div className="text-center py-20 flex flex-col items-center gap-4">
               <Loader2 size={40} className="animate-spin text-brand-500" />
-              <p className="text-xl text-slate-400 font-semibold uppercase tracking-widest">Searching for open roles...</p>
+              <p className="text-xl text-slate-600 font-semibold uppercase tracking-widest">Searching for open roles...</p>
             </div>
           ) : fetchError ? (
             <div className="text-center py-20">
@@ -214,7 +214,7 @@ const Career = () => {
             </div>
           ) : filteredJobs.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-xl text-slate-400 font-semibold tracking-wider">No open roles found matching your search.</p>
+              <p className="text-xl text-slate-600 font-semibold tracking-wider">No open roles found matching your search.</p>
             </div>
           ) : (
             filteredJobs.map(job => (
@@ -231,14 +231,14 @@ const Career = () => {
                       {job.title}
                     </h3>
                     <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-4 text-sm font-semibold text-slate-500">
-                        <span className="flex items-center gap-2"><MapPin size={16} className="text-slate-400"/>{job.workMode}</span>
-                        <span className="flex items-center gap-2"><Clock size={16} className="text-slate-400"/>{job.engagement}</span>
-                        <span className="flex items-center gap-2"><DollarSign size={16} className="text-slate-400"/>{job.compensation}</span>
+                        <span className="flex items-center gap-2"><MapPin size={16} className="text-slate-600"/>{job.workMode}</span>
+                        <span className="flex items-center gap-2"><Clock size={16} className="text-slate-600"/>{job.engagement}</span>
+                        <span className="flex items-center gap-2"><DollarSign size={16} className="text-slate-600"/>{job.compensation}</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between md:justify-end gap-6 w-full md:w-auto mt-2 md:mt-0 pt-4 md:pt-0 border-t md:border-none border-slate-100">
                     <span className="md:hidden text-sm font-semibold text-brand-600 uppercase tracking-widest">View Details</span>
-                    <div className="w-12 h-12 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-all shadow-sm">
+                    <div className="w-12 h-12 rounded-full bg-slate-50 text-slate-600 flex items-center justify-center group-hover:bg-brand-500 group-hover:text-white transition-all shadow-sm">
                       <ArrowRight size={20}/>
                     </div>
                   </div>
@@ -265,9 +265,9 @@ const Career = () => {
                       {activeJob.title}
                     </h2>
                     <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-600">
-                        <span className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100"><MapPin size={16} className="text-slate-400"/>{activeJob.workMode}</span>
-                        <span className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100"><Clock size={16} className="text-slate-400"/>{activeJob.engagement}</span>
-                        <span className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100"><Briefcase size={16} className="text-slate-400"/>{activeJob.commitment}</span>
+                        <span className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100"><MapPin size={16} className="text-slate-600"/>{activeJob.workMode}</span>
+                        <span className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100"><Clock size={16} className="text-slate-600"/>{activeJob.engagement}</span>
+                        <span className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100"><Briefcase size={16} className="text-slate-600"/>{activeJob.commitment}</span>
                     </div>
                  </div>
                  <button 
@@ -432,7 +432,7 @@ const Career = () => {
                           {resumeFile ? (
                             <><FileText size={20} className="text-brand-500" /> {resumeFile.name}</>
                           ) : (
-                            <><Upload size={20} className="text-slate-400" /> Click to attach your resume (max 5MB)</>
+                            <><Upload size={20} className="text-slate-600" /> Click to attach your resume (max 5MB)</>
                           )}
                         </label>
                       </div>

@@ -78,6 +78,7 @@ const VideoSection = () => {
             muted
             loop
             playsInline
+            poster="/video_poster.png"
             className="w-full h-full object-cover"
           >
             <source

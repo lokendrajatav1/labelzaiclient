@@ -31,9 +31,8 @@ const Hero = () => {
             </span>
           </h1>
 
-          <p className="text-slate-500 text-xl md:text-2xl font-medium leading-relaxed mb-5 md:mb-12 max-w-2xl">
-            Intuitive infrastructure to scale any app or agent from <br className="hidden md:block" />
-            your first user to your billionth.
+          <p className="text-slate-500 text-lg md:text-xl font-medium leading-relaxed mb-5 md:mb-12 max-w-2xl">
+            At LabelzAI, we turn unstructured data into the fuel that powers intelligent machines. Our data annotation services bridge the gap between raw information and AI understanding — labeling every image, video, text, and 3D frame with human precision and machine speed.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -49,7 +48,7 @@ const Hero = () => {
         {/* Right Side: Image Placeholder */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <img 
-            src="/hero2.png" 
+            src="/hero_v4.png" 
             alt="LabelzAI Platform" 
             className="w-full h-auto max-w-xl lg:max-w-2xl"
           />

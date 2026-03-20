@@ -50,6 +50,16 @@ const Navbar = () => {
     { title: "Agriculture", icon: <Sprout size={18} />, desc: "Crop health and yield prediction mapping", link: "/industries/agriculture" },
   ];
 
+  const caseStudies = [
+    { title: "Autonomous Mobility", icon: <Car size={18} />, desc: "LiDAR & Lane Detection for self-driving AI", link: "/case-studies/autonomous" },
+    { title: "E-commerce & Retail", icon: <ShoppingBag size={18} />, desc: "Catalog search & classification successes", link: "/case-studies/ecommerce" },
+    { title: "Agriculture & AgriTech", icon: <Sprout size={18} />, desc: "Precision farming & crop health cases", link: "/case-studies/agriculture" },
+    { title: "Media & Entertainment", icon: <Film size={18} />, desc: "Content moderation & engagement logs", link: "/case-studies/media" },
+    { title: "Education & EdTech", icon: <GraduationCap size={18} />, desc: "Personalized learning paths & assessments", link: "/case-studies/education" },
+    { title: "Manufacturing & Industrial", icon: <Factory size={18} />, desc: "Quality control & industrial safety cases", link: "/case-studies/manufacturing" },
+    { title: "Medical & Healthcare", icon: <Stethoscope size={18} />, desc: "Precision diagnostics & disease detection", link: "/case-studies/medical" },
+  ];
+
   return (
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
@@ -75,7 +85,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-10">
           <Link to="/" className="text-[15px] font-medium text-slate-900 hover:text-brand-600 transition-colors">Home</Link>
-          <a href="/#about" className="text-[15px] font-medium text-slate-900 hover:text-brand-600 transition-colors">About Us</a>
+          <Link to="/about" className="text-[15px] font-medium text-slate-900 hover:text-brand-600 transition-colors">About Us</Link>
           
           {/* Services Dropdown */}
           <div 
@@ -88,13 +98,13 @@ const Navbar = () => {
             </button>
             <div className={`absolute top-full -left-20 w-[600px] bg-white border border-slate-100 rounded-2xl p-6 grid grid-cols-2 gap-4 transition-all duration-300 origin-top ${activeDropdown === 'services' ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
               {services.map((item, idx) => (
-                <Link key={idx} to={item.link || "/#services"} className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-50/50 transition-colors group/item">
+                <Link key={idx} to={item.link || "/#services"} className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-50/40 transition-all group/item border border-transparent hover:border-brand-100">
                   <div className="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center group-hover/item:bg-brand-600 group-hover/item:text-white transition-colors">
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-900 mb-1">{item.title}</h4>
-                    <p className="text-xs text-slate-500 font-medium">{item.desc}</p>
+                    <h4 className="text-sm font-semibold text-slate-900 mb-1 leading-tight">{item.title}</h4>
+                    <p className="text-[12px] text-slate-500 font-medium leading-relaxed">{item.desc}</p>
                   </div>
                 </Link>
               ))}
@@ -112,13 +122,37 @@ const Navbar = () => {
             </button>
             <div className={`absolute top-full -left-20 w-[600px] bg-white border border-slate-100 rounded-2xl p-6 grid grid-cols-2 gap-4 transition-all duration-300 origin-top ${activeDropdown === 'industries' ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
               {industries.map((item, idx) => (
-                <Link key={idx} to={item.link} className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-50/50 transition-colors group/item">
+                <Link key={idx} to={item.link} className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-50/40 transition-all group/item border border-transparent hover:border-brand-100">
                   <div className="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center group-hover/item:bg-brand-600 group-hover/item:text-white transition-colors">
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-slate-900 mb-1">{item.title}</h4>
-                    <p className="text-xs text-slate-500 font-medium">{item.desc}</p>
+                    <h4 className="text-sm font-semibold text-slate-900 mb-1 leading-tight">{item.title}</h4>
+                    <p className="text-[12px] text-slate-500 font-medium leading-relaxed">{item.desc}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Case Studies Dropdown */}
+          <div 
+            className="relative group"
+            onMouseEnter={() => setActiveDropdown('caseStudies')}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button className="flex items-center gap-1 text-[15px] font-medium text-slate-900 hover:text-brand-600 transition-colors py-2">
+              Case Studies <ChevronDown size={14} className={`transition-transform duration-300 ${activeDropdown === 'caseStudies' ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`absolute top-full -left-40 w-[640px] bg-white border border-slate-100 rounded-2xl p-6 grid grid-cols-2 gap-4 transition-all duration-300 origin-top ${activeDropdown === 'caseStudies' ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
+              {caseStudies.map((item, idx) => (
+                <Link key={idx} to={item.link} className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-50/40 transition-all group/item border border-transparent hover:border-brand-100">
+                  <div className="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center group-hover/item:bg-brand-600 group-hover/item:text-white transition-colors">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-slate-900 mb-1 leading-tight">{item.title}</h4>
+                    <p className="text-[12px] text-slate-500 font-medium leading-relaxed">{item.desc}</p>
                   </div>
                 </Link>
               ))}
@@ -150,7 +184,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-8 flex-1">
             <div className="flex flex-col gap-6">
               <Link to="/" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-              <a href="/#about" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
+              <Link to="/about" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
               <Link to="/career" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
               <Link to="/contact" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
             </div>
@@ -174,21 +208,39 @@ const Navbar = () => {
             </div>
 
             <div className="space-y-6">
-               <div className="flex items-center gap-3">
-                <div className="h-[1px] flex-1 bg-slate-100"></div>
-                <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">What we Serve</h3>
-                <div className="h-[1px] flex-1 bg-slate-100"></div>
-              </div>
-              <div className="grid grid-cols-1 gap-4">
-                {industries.map((item, idx) => (
-                  <Link key={idx} to={item.link} className="flex items-center gap-4 p-3 rounded-xl bg-slate-50 text-base font-semibold text-slate-700 active:bg-brand-50 active:text-brand-600 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-                    <div className="w-9 h-9 rounded-lg bg-white border border-slate-100 text-brand-600 flex items-center justify-center">
-                      {item.icon}
-                    </div>
-                    {item.title}
-                  </Link>
-                ))}
-              </div>
+                 <div className="flex items-center gap-3">
+                  <div className="h-[1px] flex-1 bg-slate-100"></div>
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">What we Serve</h3>
+                  <div className="h-[1px] flex-1 bg-slate-100"></div>
+                </div>
+                <div className="grid grid-cols-1 gap-4">
+                  {industries.map((item, idx) => (
+                    <Link key={idx} to={item.link} className="flex items-center gap-4 p-3 rounded-xl bg-slate-50 text-base font-semibold text-slate-700 active:bg-brand-50 active:text-brand-600 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      <div className="w-9 h-9 rounded-lg bg-white border border-slate-100 text-brand-600 flex items-center justify-center">
+                        {item.icon}
+                      </div>
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+            </div>
+
+            <div className="space-y-6">
+                 <div className="flex items-center gap-3">
+                  <div className="h-[1px] flex-1 bg-slate-100"></div>
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400">Case Studies</h3>
+                  <div className="h-[1px] flex-1 bg-slate-100"></div>
+                </div>
+                <div className="grid grid-cols-1 gap-4">
+                  {caseStudies.map((item, idx) => (
+                    <Link key={idx} to={item.link} className="flex items-center gap-4 p-3 rounded-xl bg-slate-50 text-base font-semibold text-slate-700 active:bg-brand-50 active:text-brand-600 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                      <div className="w-9 h-9 rounded-lg bg-white border border-slate-100 text-brand-600 flex items-center justify-center">
+                        {item.icon}
+                      </div>
+                      <span className="text-sm">{item.title}</span>
+                    </Link>
+                  ))}
+                </div>
             </div>
           </div>
           
