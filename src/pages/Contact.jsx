@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Mail, MapPin, Send, MessageSquare, Briefcase, Globe, Sparkles, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:5000' : '');
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -61,7 +61,7 @@ const Contact = () => {
 
       setSuccess(true);
       setFormData({ firstName: '', lastName: '', email: '', service: '', message: '' });
-    } catch (err) {
+        } catch {
       setError('Unable to connect to server. Please check your connection and try again.');
     } finally {
       setLoading(false);
