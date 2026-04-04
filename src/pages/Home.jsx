@@ -15,8 +15,8 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <LogoMarquee />
-      <VideoSection />
+      {/* <LogoMarquee />
+      <VideoSection /> */}
       <About />
       <Services />
       <Industries />

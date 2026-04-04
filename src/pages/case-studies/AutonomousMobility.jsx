@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { 
-  CheckCircle2, Car, Target, Shield, Database, Zap, 
-  Layers, Box, AlertTriangle, MapPin, Eye, Compass, ChevronRight, Sparkles, Navigation2, Cpu
+  ChevronRight, ArrowRight, CheckCircle2, MessageSquare
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ContactCard from '../../components/ContactCard';
 
 const AutonomousMobilityCaseStudy = () => {
   useEffect(() => {
@@ -11,198 +11,235 @@ const AutonomousMobilityCaseStudy = () => {
   }, []);
 
   return (
-    <div className="bg-white text-slate-900 min-h-screen font-sans selection:bg-brand-100 selection:text-brand-900">
+    <div className="bg-white text-gray-900 min-h-screen font-sans selection:bg-brand-100 selection:text-brand-900">
       
-      {/* 1. Hero Section - Premium Aesthetic */}
-      <section className="relative pt-32 md:pt-48 pb-20 overflow-hidden bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-600 text-[13px] font-semibold mb-8 border border-brand-100/50">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse"></span>
-            Case Study — Autonomous Mobility
+      {/* 1. Hero Section */}
+      <section className="relative mt-[60px] md:mt-[64px] pt-12 md:pt-20 pb-32 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0 bg-black">
+          <img 
+            src="/Case-Studies-Final-hero/Autonomous_Vehicles_&_Mobility_Data_Annotation.png" 
+            alt="Autonomous Hero Background" 
+            className="w-full h-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 flex flex-col items-start text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white backdrop-blur-sm border border-white/20 text-[12px] font-medium mb-8 tracking-wider">
+             Case Study — Autonomous Mobility
           </div>
-          <h1 className="text-4xl md:text-7xl font-semibold text-slate-900 leading-[1.05] tracking-tight mb-8">
-             Object Detection & Lane <br className="hidden md:block" />
-             <span className="text-brand-500">Self-Driving AI.</span>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-[1.2] tracking-tight mb-6 max-w-4xl">
+             Object Detection & Lane Segmentation <br className="hidden md:block" />
+             for <span className="text-white">Self-Driving AI Systems</span>
           </h1>
-          <p className="text-slate-500 text-xl md:text-2xl font-medium leading-relaxed max-w-4xl mx-auto mb-12">
-            Transforming multi-sensor raw data into high-precision, safety-critical ground truth for perception and path planning.
+          <p className="text-gray-300 text-base md:text-xl font-normal leading-relaxed max-w-2xl">
+             Providing high-fidelity ground truth for complex urban driving environments, specializing in sensor fusion and corner-case labeling.
           </p>
-          <div className="flex flex-wrap justify-center gap-10">
-            <div className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tighter">99.9%</span>
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">Accuracy Benchmark</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-semibold text-slate-900 tracking-tighter">1.2M+</span>
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">Annotated Cuboids</span>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* 2. Visual Frame */}
-      {/* <section className="pb-32 px-6">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="rounded-[4rem] overflow-hidden border-2 border-slate-100 bg-slate-50 shadow-2xl shadow-slate-100/50">
-            <img 
-              src="/ai_ml/computer-vision.png" 
-              alt="Autonomous Mobility Annotation" 
-              className="w-full h-[400px] md:h-[500px] object-cover" 
-            />
-          </div>
-        </div>
-      </section> */}
+      {/* Main Content with Sticky Sidebar */}
+      <section className="pt-16 md:pt-24 pb-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            {/* Left: Sticky Sidebar Container */}
+            <div className="lg:col-span-4">
+              <div className="sticky top-32 h-fit">
+                <ContactCard />
+              </div>
+            </div>
 
-      {/* 3. Detailed Overview & Problem-Solution */}
-      <section className="py-24 border-t border-slate-50">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-32">
-          
-          {/* Overview */}
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-             <div className="w-full lg:w-1/2 space-y-8">
-                <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-tight">
-                  Industry <span className="text-brand-600 italic">Context.</span>
-                </h2>
-                <div className="h-1.5 w-24 bg-brand-600"></div>
-                <p className="text-slate-600 text-xl font-medium leading-relaxed italic">
-                  "Self-driving systems must accurately detect objects and interpret road structures in real-time, amidst chaotic urban environments and varying weather conditions."
-                </p>
-                <div className="h-[1px] w-full bg-slate-100"></div>
-                <p className="text-slate-500 text-lg font-medium leading-relaxed max-w-xl">
-                  A leading mobility technology provider in India was developing a Level 4 autonomous driving system tailored for the complexities of local traffic. They required high-precision camera and LiDAR annotation to ensure robust perception in high-density areas.
-                </p>
-             </div>
-             <div className="w-full lg:w-1/2">
-                <div className="p-10 bg-slate-50 border-2 border-slate-100 rounded-3xl h-full flex flex-col justify-center">
-                   <h3 className="text-2xl font-semibold text-slate-900 flex items-center gap-3 mb-8">
-                     <Target className="text-brand-600" /> Project Objective
-                   </h3>
-                   <div className="space-y-6">
-                     {[
-                       "LiDAR cuboid annotation for vehicle-distance estimation.",
-                       "Polyline segmentation for complex lane markings.",
-                       "Multi-sensor fusion (Camera + LiDAR) synchronization.",
-                       "India-specific edge casing (rickshaws, cattle, narrow roads)."
-                     ].map((item, i) => (
-                       <div key={i} className="flex items-start gap-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
-                         <div className="w-5 h-5 rounded-full bg-brand-50 flex items-center justify-center shrink-0 mt-0.5">
-                           <CheckCircle2 className="text-brand-600" size={12} />
-                         </div>
-                         <span className="text-slate-700 font-bold text-sm tracking-tight">{item}</span>
-                       </div>
-                     ))}
-                   </div>
+            {/* Right Side Content */}
+            <div className="lg:col-span-8 space-y-12">
+              
+              {/* Overview Image */}
+              <div className="space-y-10">
+                <div className="overflow-hidden border border-gray-100 shadow-sm">
+                  <img 
+                    src="/autonomous-overview.png" 
+                    alt="Autonomous Mobility Overview" 
+                    className="w-full h-[300px] md:h-[400px] object-cover"
+                  />
                 </div>
-             </div>
-          </div>
+                <hr className="border-gray-300" />
+              </div>
 
-          {/* Solutions Feature Set */}
-          <div className="space-y-16">
-            <div className="flex items-center gap-4">
-               <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 tracking-tight leading-tight">
-                 Custom <span className="text-brand-600 italic">Annotation</span> Workflows.
-               </h2>
-               <div className="flex-1 h-[1px] bg-slate-100"></div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-               {[
-                 { 
-                   title: "2D Camera Suite", 
-                   desc: "Bounding boxes and object tracking for dynamic scenes.",
-                   items: ["Vehicles & Pedestrians", "Signage Recognition", "Traffic Signals"],
-                   icon: <Layers />
-                 },
-                 { 
-                   title: "3D LiDAR Hub", 
-                   desc: "Point cloud cuboids and spatial depth mapping.",
-                   items: ["Distance Estimation", "3D Cuboids", "Surface Segmentation"],
-                   icon: <Box />
-                 },
-                 { 
-                   title: "Semantic Mapping", 
-                   desc: "Pixel-perfect segmentation of road environments.",
-                   items: ["Drivable Areas", "Sidewalk Boundaries", "Road Hazards"],
-                   icon: <Zap />
-                 },
-                 { 
-                   title: "Behavior Logic", 
-                   desc: "Classification for scenario-based training.",
-                   items: ["Sudden Braking", "Lane Changing", "Violation Markers"],
-                   icon: <Navigation2 />
-                 }
-               ].map((item, i) => (
-                 <div key={i} className="p-8 bg-white border-2 border-slate-50 rounded-2xl hover:border-brand-600 transition-all group">
-                    <div className="w-12 h-12 rounded-2xl bg-slate-50 text-brand-600 flex items-center justify-center mb-8 group-hover:bg-brand-600 group-hover:text-white transition-all">
-                       {item.icon}
-                    </div>
-                    <h3 className="text-xl font-bold mb-4 uppercase tracking-tighter text-slate-900">{item.title}</h3>
-                    <p className="text-slate-600 text-sm font-medium leading-relaxed mb-6">{item.desc}</p>
-                    <div className="space-y-2">
-                       {item.items.map((tag, j) => (
-                         <div key={j} className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">{tag}</div>
-                       ))}
-                    </div>
-                 </div>
-               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Results Section - High-Contrast Stats */}
-      <section className="py-24 md:py-32 bg-slate-950 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-600/10 rounded-full blur-[100px] -mt-48 -mr-48"></div>
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-             <div className="space-y-8">
-                <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight leading-[1.1]">
-                  Scalable <span className="text-brand-400">Road-Ready</span> <br />AI Production.
-                </h2>
-                <p className="text-white text-lg font-medium leading-relaxed max-w-xl italic">
-                  "Our multi-layer verification system ensured that 99.9% of safety-critical markers were labeled correctly, allowing the client to move to public test trials 4 months ahead of schedule."
-                </p>
-                <div className="grid grid-cols-2 gap-8 pt-8">
-                    <div className="space-y-2">
-                       <div className="text-4xl font-bold text-brand-400 font-mono">1.2M+</div>
-                       <div className="text-[10px] font-bold uppercase tracking-widest text-slate-300">Dataset Volume</div>
-                    </div>
-                    <div className="space-y-2">
-                       <div className="text-4xl font-bold text-brand-400 font-mono">0.1%</div>
-                       <div className="text-[10px] font-bold uppercase tracking-widest text-slate-300">Error Margin</div>
-                    </div>
+              {/* Industry Overview */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">Industry Overview</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
                 </div>
-             </div>
-             <div className="grid grid-cols-1 gap-4">
-                {[
-                   { title: "ADAS Calibration", val: "High Frequency Fusion Support" },
-                   { title: "Training Velocity", val: "40% Faster Cycle Turnaround" },
-                   { title: "Cost Efficiency", val: "50% Savings on Data Prep" },
-                   { title: "Deployment", val: "Market Ready SC-Scenario Data" }
-                ].map((item, i) => (
-                   <div key={i} className="flex justify-between items-center p-6 bg-slate-900 border border-slate-800 rounded-2xl group hover:border-brand-600 transition-all">
-                      <span className="text-slate-300 font-bold uppercase text-[10px] tracking-[0.2em] group-hover:text-white transition-colors">{item.title}</span>
-                      <span className="text-white font-bold text-sm tracking-tight group-hover:text-brand-400 transition-colors uppercase">{item.val}</span>
-                   </div>
-                ))}
-             </div>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug">
+                  The autonomous vehicle industry is rapidly transforming global transportation through artificial intelligence, computer vision, and machine learning technologies. Self-driving cars rely heavily on high-quality annotated datasets to train AI models that can accurately detect objects, interpret road conditions, and understand lane structures in real-time driving environments.
+                </p>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug pt-2">
+                  Autonomous driving companies, automotive manufacturers, and mobility startups collect massive volumes of visual data using cameras, LiDAR sensors, and radar systems mounted on vehicles. However, this raw data must be precisely annotated before it can be used to train AI models for perception tasks such as object detection, lane segmentation, and road scene understanding.
+                </p>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug pt-2">
+                  To improve the performance of their perception models, the client required a reliable partner capable of delivering high-accuracy dataset annotation for autonomous driving applications at scale.
+                </p>
+              </div>
+
+              <hr className="border-gray-300" />
+
+              {/* Project Objective */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">Project Objective</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug">
+                  The client’s goal was to build a robust computer vision model capable of accurately identifying road elements and lane boundaries in complex urban and highway environments.
+                </p>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug pt-2">
+                  The primary objectives included:
+                </p>
+                
+                <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                  {[
+                    "Annotating road objects such as vehicles, pedestrians, cyclists, and traffic signs",
+                    "Performing lane segmentation to detect lane boundaries and road markings",
+                    "Creating high-quality training datasets for AI perception models",
+                    "Improving model accuracy for Advanced Driver Assistance Systems (ADAS)"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                      <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <hr className="border-gray-300" />
+
+              {/* Problem Statement */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">Problem Statement – Autonomous Vehicle Dataset Annotation for Object Detection & Lane Segmentation</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug">
+                  The development of autonomous vehicles depends heavily on advanced computer vision systems capable of accurately interpreting complex road environments. These systems rely on machine learning models that must be trained using large volumes of precisely annotated datasets. However, raw driving data collected from vehicle-mounted cameras and sensors cannot be directly used for model training without high-quality object detection such as car , lane etc. and lane segmentation annotations.
+                </p>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug pt-2">
+                  Autonomous driving datasets typically contain thousands to millions of image and video frames captured across diverse environments such as urban streets, highways, intersections, and rural roads. Within these datasets, AI models must learn to identify and understand various road elements including vehicles, pedestrians, cyclists, traffic lights, road signs, and lane markings. Without accurate labeling of these elements, machine learning models struggle to correctly detect objects, recognize lane boundaries, and interpret drivable road areas.
+                </p>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug pt-2">
+                  One of the primary challenges in autonomous vehicle dataset preparation is the complexity and variability of real-world driving conditions. Road scenes often include occluded objects, dense traffic, changing lighting conditions, weather variations, and irregular lane markings. These factors make the annotation process significantly more complex and require specialized expertise to ensure labeling accuracy and consistency across large datasets.
+                </p>
+              </div>
+
+              <hr className="border-gray-300" />
+
+              {/* Our Autonomous Mobility Annotation Solutions */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">Our Autonomous Mobility Annotation Solutions</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+
+                <div className="space-y-5 pt-2">
+                  {/* Item 1 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">1. 2D Image & Video Annotation</h3>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "Bounding boxes for vehicles, pedestrians, animals, obstacles",
+                        "Polygon annotation for irregular objects",
+                        "Lane detection and road boundary tracing",
+                        "Object tracking across frames",
+                        "Traffic signal and sign labeling",
+                        "Use cases: ADAS, object detection, behavior prediction"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-200" />
+
+                  {/* Item 2 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">2. Semantic Segmentation</h3>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "Drivable vs. non-drivable areas",
+                        "Road surface types (potholes, speed breakers, mud, gravel)",
+                        "Sidewalks, medians, construction zones",
+                        "Urban and highway environments",
+                        "Use cases: Path planning, scene understanding"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-200" />
+
+                  {/* Item 3 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">3. 3D LiDAR & Sensor Fusion Annotation</h3>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "3D cuboid annotation for vehicles and pedestrians",
+                        "Point cloud segmentation",
+                        "Camera–LiDAR synchronization",
+                        "Motion trajectory labeling",
+                        "Use cases: Autonomous navigation, object tracking, perception systems"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-200" />
+
+                  {/* Item 4 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">4. India-Specific Edge Case Annotation</h3>
+                    <p className="text-gray-700 text-base md:text-lg font-normal leading-snug mb-2">
+                      We specialize in rare and high-risk scenarios:
+                    </p>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "Two-wheelers weaving through traffic",
+                        "Auto-rickshaws and overloaded vehicles",
+                        "Jaywalking and roadside vendors",
+                        "Animals crossing roads",
+                        "Wrong-side driving",
+                        "Night, rain, fog, and low-visibility conditions"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-gray-900 font-semibold text-base md:text-lg leading-snug pt-3">
+                      Result: <span className="text-gray-700 font-normal">Stronger models that perform in real-world Indian conditions.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 5. Results & CTA */}
-      <section className="py-32">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
-           <h2 className="text-4xl md:text-6xl font-semibold text-slate-900 leading-[1.1] tracking-tight">
-             Build <span className="text-brand-600 italic">Trusted</span> <br /> Mobility Systems.
-           </h2>
-           <div className="pt-8">
-             <Link to="/contact" className="inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 text-lg font-semibold hover:bg-slate-800 transition-all rounded-full shadow-lg shadow-slate-900/10 active:scale-95">
-               Start Your Mobility Project <ChevronRight size={20} />
-            </Link>
-           </div>
-        </div>
-      </section>
+
 
     </div>
   );

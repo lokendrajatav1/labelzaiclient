@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { 
-  CheckCircle2, ShoppingBag, ShoppingCart, Tag, Target, TrendingUp, Users, Database, 
-  Zap, Search, Image, FileText, BarChart, Layers, Shield, 
-  Activity, View, Package, Truck, Laptop, ChevronRight, Sparkles
+  ChevronRight, ArrowRight, CheckCircle2, MessageSquare
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ContactCard from '../../components/ContactCard';
 
 const EcommerceRetailCaseStudy = () => {
   useEffect(() => {
@@ -12,196 +11,306 @@ const EcommerceRetailCaseStudy = () => {
   }, []);
 
   return (
-    <div className="bg-white text-slate-900 min-h-screen font-sans selection:bg-brand-100 selection:text-brand-900">
+    <div className="bg-white text-gray-900 min-h-screen font-sans selection:bg-brand-100 selection:text-brand-900">
       
-      {/* 1. Hero Section - Premium Aesthetic */}
-      <section className="relative pt-32 md:pt-48 pb-20 overflow-hidden bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-600 text-[13px] font-semibold mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse"></span>
-            Case Study — E-commerce & Retail
+      {/* 1. Hero Section */}
+      <section className="relative mt-[60px] md:mt-[64px] pt-12 md:pt-20 pb-32 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0 bg-black">
+          <img 
+            src="/Case-Studies-Final-hero/E-commerce.png" 
+            alt="Ecommerce Hero Background" 
+            className="w-full h-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 flex flex-col items-start text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white backdrop-blur-sm border border-white/20 text-[12px] font-medium mb-8 tracking-wider">
+             Case Study — E-commerce & Retail
           </div>
-          <h1 className="text-4xl md:text-7xl font-semibold text-slate-900 leading-[1.05] tracking-tight mb-8">
-             Catalog Intelligence & <br className="hidden md:block" />
-             <span className="text-brand-500">Visual Search Optimization.</span>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-[1.2] tracking-tight mb-6 max-w-4xl">
+             E-commerce Product Data Annotation <br className="hidden md:block" />
+             That Reduced Returns by 18% and <span className="text-white">Improved Search Accuracy</span>
           </h1>
-          <p className="text-slate-500 text-xl md:text-2xl font-medium leading-relaxed max-w-4xl mx-auto mb-12">
-            Transforming massive unstructured catalogs into searchable, high-conversion intelligence through attribute extraction and visual classification.
+          <p className="text-gray-300 text-base md:text-xl font-normal leading-relaxed max-w-2xl">
+             Accelerating the move to visual commerce through high-throughput precision product attribute labeling and catalog enrichment.
           </p>
-          <div className="flex flex-wrap justify-center gap-8">
-            <div className="flex items-center gap-3 text-slate-500 font-semibold text-sm">
-              <Package size={18} className="text-brand-500" />
-              1M+ Product Listings
-            </div>
-            <div className="flex items-center gap-3 text-slate-500 font-semibold text-sm">
-              <TrendingUp size={18} className="text-brand-500" />
-              +25% Search Relevancy
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* 2. Visual Frame */}
-      {/* <section className="pb-32 px-6">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="rounded-3xl overflow-hidden border-2 border-slate-100">
-            <img 
-              src="/ai_ml/nlp-service-image-2.png" 
-              alt="E-commerce AI Annotation" 
-              className="w-full h-[400px] md:h-[500px] object-cover" 
-            />
-          </div>
-        </div>
-      </section> */}
-
-      {/* 3. Detailed Overview & Problem - Restoring/Adding Detail */}
-      <section className="py-24 border-t border-slate-50">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-24">
-          
-          {/* Overview */}
-          <div className="space-y-8">
-            <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 leading-tight">
-              Project <span className="text-brand-600">Context.</span>
-            </h2>
-            <div className="h-1.5 w-24 bg-brand-600"></div>
-            <p className="text-slate-600 text-xl md:text-2xl font-medium leading-relaxed max-w-5xl">
-              A rapidly scaling global marketplace was struggling with inconsistent product data across millions of listings. Inaccurate categorization and missing attributes were leading to poor search discoverability, high return rates, and a fragmented shopper experience. They needed a partner to standardize their entire catalog through high-precision manual and AI-assisted annotation.
-            </p>
-          </div>
-
-          {/* Detailed Problem Section */}
-          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-            <div className="w-full lg:w-1/2 space-y-8">
-              <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 leading-tight">
-                The <span className="text-brand-600">Problem.</span>
-              </h2>
-              <div className="grid grid-cols-1 gap-6 pt-4">
-                {[
-                  { title: "Inconsistent Taxonomy", desc: "Sellers used varied naming conventions, making it impossible to apply a unified site-wide hierarchy." },
-                  { title: "Missing Attributes", desc: "Critical filters like material, fit, and pattern were missing from over 40% of the active listings." },
-                  { title: "Visual Search Failure", desc: "Lack of granular visual tags meant 'shop similar' features were returning irrelevant recommendations." },
-                  { title: "Content Gaps", desc: "Reviews and descriptions lacked sentiment and entity extraction to power intelligent product summaries." }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-6 group">
-                    <div className="w-1.5 h-auto bg-brand-100 group-hover:bg-brand-600 transition-colors shrink-0"></div>
-                    <div className="py-2">
-                       <h4 className="text-slate-900 font-bold mb-2 uppercase tracking-widest text-xs italic">{item.title}</h4>
-                       <p className="text-slate-500 font-bold text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+      {/* Main Content with Sticky Sidebar */}
+      <section className="pt-16 md:pt-24 pb-20 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            {/* Left: Sticky Sidebar Container */}
+            <div className="lg:col-span-4">
+              <div className="sticky top-32 h-fit">
+                <ContactCard />
               </div>
             </div>
-            <div className="w-full lg:w-1/2">
-               <div className="p-10 bg-slate-50 border-2 border-slate-100 rounded-2xl space-y-8 h-full flex flex-col justify-center">
-                  <h3 className="text-2xl font-semibold text-slate-900 flex items-center gap-3">
-                    <Sparkles className="text-brand-600" /> Strategic Impact
-                  </h3>
-                  <div className="space-y-6">
-                    {[
-                      "15% Reduction in Return Rates",
-                      "25% Improvement in Search Conversion",
-                      "Faster Onboarding for New Sellers",
-                      "Near-perfect Planogram Compliance"
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-4">
-                        <CheckCircle2 className="text-brand-600" size={20} />
-                        <span className="text-slate-800 font-bold text-lg">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 4. Solutions - Full Feature List */}
-      <section className="py-24 md:py-32 bg-slate-950 text-white overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="max-w-3xl mb-20 space-y-6">
-            <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight uppercase leading-tight">
-              Retail <span className="text-brand-400">Solutions.</span>
-            </h2>
-            <p className="text-slate-400 text-lg font-medium italic">
-              Multi-layer annotation services from catalog normalization to AR/VR data prep.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                title: "Image Classification", 
-                desc: "Categorizing products into deep hierarchies.",
-                items: ["Fashion & Apparel", "Electronics & Gadgets", "Home & Living"],
-                icon: <Image />
-              },
-              { 
-                title: "Attribute Extraction", 
-                desc: "Pixel-level tagging of product features.",
-                items: ["Material & Texture", "Color & Pattern", "Fit & Style"],
-                icon: <Tag />
-              },
-              { 
-                title: "Visual Search Training", 
-                desc: "Bounding boxes for shop-the-look AI.",
-                items: ["Similar Item ID", "Outfit Matching", "Style Trends"],
-                icon: <Search />
-              },
-              { 
-                title: "Catalog Analysis", 
-                desc: "Auditing seller-uploaded metadata for accuracy.",
-                items: ["Description Validation", "Image Quality Check", "Price Normalization"],
-                icon: <BarChart />
-              },
-              { 
-                title: "Customer Sentiment", 
-                desc: "NLP for reviews and feedback loops.",
-                items: ["Review Labeling", "Entity Extraction", "Tone Analysis"],
-                icon: <FileText />
-              },
-              { 
-                title: "QA & Verification", 
-                desc: "Multi-layered human-in-the-loop audit.",
-                items: ["99% Precision", "Scalable Workforce", "Real-time Audits"],
-                icon: <Shield />
-              }
-            ].map((item, i) => (
-              <div key={i} className="group p-10 bg-slate-900 border border-slate-800 rounded-2xl hover:border-brand-600 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-slate-800 text-brand-400 flex items-center justify-center mb-8 group-hover:bg-brand-600 group-hover:text-white transition-all">
-                  {item.icon}
+            {/* Right Side Content */}
+            <div className="lg:col-span-8 space-y-12">
+              
+              {/* Overview Image */}
+              <div className="space-y-10">
+                <div className="overflow-hidden border border-gray-100 shadow-sm">
+                  <img 
+                    src="/ecommerce-overview.png" 
+                    alt="E-commerce Annotation Overview" 
+                    className="w-full h-[300px] md:h-[400px] object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-white uppercase tracking-tight italic">{item.title}</h3>
-                <p className="text-slate-300 text-sm font-medium leading-relaxed mb-6">{item.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {item.items.map((it, j) => (
-                    <span key={j} className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white transition-colors group-hover:text-brand-400">
-                      {it}
-                    </span>
+                <hr className="border-gray-300" />
+              </div>
+
+              {/* Meta Info */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">Project Overview</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+                <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                  {[
+                    <><span className="font-semibold text-gray-900">Industry:</span> E-commerce & Retail</>,
+                    <><span className="font-semibold text-gray-900">Location:</span> India</>,
+                    <><span className="font-semibold text-gray-900">Data Volume:</span> 3 Million+ SKUs</>,
+                    <><span className="font-semibold text-gray-900">Services Used:</span> Image Annotation, Attribute Tagging, Text Classification, Visual Similarity Labeling</>
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                      <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                    </div>
                   ))}
                 </div>
               </div>
-            ))}
+
+              <hr className="border-gray-300" />
+
+              {/* The Client */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">The Client</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug">
+                  A rapidly scaling Indian multi-vendor marketplace onboarding 10,000+ new products daily across fashion, electronics, and home categories. The platform struggled with inconsistent product data affecting customer experience and sales performance.
+                </p>
+              </div>
+
+              <hr className="border-gray-300" />
+
+              {/* The Challenge */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">The Challenge</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug">
+                  The marketplace faced critical catalog intelligence issues:
+                </p>
+                
+                <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                  {[
+                    "Incorrect product categories assigned by sellers",
+                    "Missing attributes like color, size, material, and style",
+                    "Poor-quality or misleading product images",
+                    "High return rates in fashion due to product mismatch",
+                    "Low search relevance and weak recommendation performance",
+                    "Manual catalog review that couldn’t scale with growth"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                      <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <h3 className="text-lg font-medium text-gray-900 pt-2">Business Impact:</h3>
+                <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                  {[
+                    "28% return rate in fashion",
+                    "Low product discoverability",
+                    "Delayed listing approvals (up to 48 hours)"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                      <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <hr className="border-gray-300" />
+
+              {/* The Solution */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">Our Data Annotation Solution</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+                <p className="text-gray-700 text-base md:text-lg font-normal leading-snug">
+                  We deployed a retail-focused annotation pipeline designed for high accuracy, scalability, and fast turnaround.
+                </p>
+
+                <div className="space-y-5 pt-2">
+                  {/* Item 1 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">1. Product Image Annotation</h3>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "Bounding box labeling for product detection",
+                        "Background quality validation",
+                        "Image compliance checks (blur, watermark, multi-product issues)",
+                        "Variant identification (color, design differences)"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-200" />
+
+                  {/* Item 2 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">2. Attribute Tagging (Fine-Grained)</h3>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "Color, pattern, fabric, sleeve type, fit, material",
+                        "Electronics specifications and feature tagging",
+                        "Home product style and usage classification"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-200" />
+
+                  {/* Item 3 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">3. Product Text Annotation</h3>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "Category classification and hierarchy mapping",
+                        "Title normalization and keyword tagging",
+                        "Attribute extraction from descriptions",
+                        "Brand and variant identification"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-200" />
+
+                  {/* Item 4 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">4. Visual Similarity Labeling</h3>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "Same style vs different style tagging",
+                        "Look-alike product grouping",
+                        "Dataset creation for visual search and recommendations"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <hr className="border-gray-200" />
+
+                  {/* Item 5 */}
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-medium text-gray-900">5. Quality Assurance Framework</h3>
+                    <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                      {[
+                        "Two-layer human QA",
+                        "Retail domain-trained annotators",
+                        "95–98% accuracy benchmarks",
+                        "Active learning for continuous model improvement"
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                          <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-gray-900 font-medium text-base md:text-lg leading-snug pt-3">
+                      Processing Capacity: <span className="text-gray-700 font-normal">200,000+ images per day</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <hr className="border-gray-300" />
+
+              {/* Why E-commerce Companies Choose Our Annotation Services */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">Why E-commerce Companies Choose Us</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+                <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                  {[
+                    "Retail domain expertise (Fashion, Electronics, Grocery, Home)",
+                    "Scalable teams for high-volume catalog processing",
+                    "Multilingual annotation for Indian marketplaces",
+                    "Fast turnaround with enterprise-grade QA",
+                    "Cost-effective, India-based operations"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                      <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <hr className="border-gray-300" />
+
+              {/* Use Cases We Support */}
+              <div className="space-y-5">
+                <div className="space-y-2 text-left">
+                  <h2 className="text-xl md:text-2xl font-medium text-gray-900">Use Cases We Support</h2>
+                  <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+                <div className="space-y-1 pl-0 md:pl-4 pt-1">
+                  {[
+                    "Marketplace catalog standardization",
+                    "AI-powered product search & recommendations",
+                    "Visual search and similarity engines",
+                    "Automated listing quality control",
+                    "Return reduction through accurate product data"
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                      <span className="text-gray-700 text-base md:text-lg leading-snug">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 5. Results Section */}
-      <section className="py-32">
-        <div className="max-w-4xl mx-auto px-6 text-center space-y-12">
-           <h2 className="text-4xl md:text-6xl font-semibold text-slate-900 leading-[1.1] tracking-tight italic">
-             Ready to <span className="text-brand-600">Grow?</span>
-           </h2>
-           <p className="text-xl text-slate-500 font-medium italic max-w-2xl mx-auto leading-relaxed">
-             "Precision data is the foundation of high-converting e-commerce. Let us help you structure yours."
-           </p>
-           <div className="pt-8">
-             <Link to="/contact" className="inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 text-lg font-semibold hover:bg-slate-800 transition-all rounded-full shadow-lg shadow-slate-900/10 active:scale-95">
-               Start Your Project <ChevronRight size={20} />
-            </Link>
-           </div>
-        </div>
-      </section>
+
 
     </div>
   );

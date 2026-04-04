@@ -68,9 +68,9 @@ const Industries = () => {
     <section className="py-10 md:py-20 bg-white" id="industries">
       <div className="max-w-[1400px] mx-auto px-2 md:px-12">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-600 text-[11px] font-semibold uppercase tracking-widest mb-4">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-600 text-[11px] font-semibold uppercase tracking-widest mb-4">
             Custom Solutions
-          </div>
+          </div> */}
           <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 tracking-tight">
             Industries we <span className="text-brand-600">Serve</span>
           </h2>
@@ -83,12 +83,15 @@ const Industries = () => {
                 <div className="text-brand-600 mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed font-medium">
+                <p className="text-slate-500 text-sm leading-relaxed font-normal mb-8">
                   {item.desc}
                 </p>
+                <div className="flex items-center gap-2 text-brand-600 font-semibold text-sm group-hover:gap-4 transition-all mt-auto pt-4 border-t border-slate-50">
+                  Learn More <ArrowRight size={16} />
+                </div>
               </>
             );
 

@@ -36,7 +36,7 @@ function App() {
   const isAdmin = location.pathname.startsWith('/admin');
 
   return (
-    <div className="font-sans antialiased text-slate-900 bg-white overflow-x-hidden">
+    <div className="font-sans antialiased text-slate-900 bg-white">
       {!isAdmin && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />

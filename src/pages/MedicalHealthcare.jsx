@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, CheckCircle2, ChevronRight, Sparkles, Stethoscope, Heart, Activity, Microscope, Zap, Database, Search, ClipboardList, Target, Layers, Box, FileText, ShieldCheck, ClipboardCheck, BarChart3, Clock, Play } from 'lucide-react';
+import { 
+  ArrowRight, CheckCircle2, ChevronRight, Sparkles, Stethoscope, Heart, Activity, Microscope, Zap, Database, Search, ClipboardList, Target, Layers, Box, FileText, ShieldCheck, ClipboardCheck, BarChart3, Clock, Play,
+  Mic, Video, Scan, FileSearch, Thermometer, UserCheck, Plus
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const MedicalHealthcare = () => {
@@ -9,196 +12,164 @@ const MedicalHealthcare = () => {
 
   const supportCategories = [
     {
-      title: "Medical Imaging Annotation",
-      description: "High-precision labeling for Radiology, Cardiology, and Pathology images. We support CT, MRI, X-ray, and ultrasound datasets for disease detection and diagnosis with sub-pixel accuracy.",
-      features: [
-        "Radiology (CT/MRI/X-ray)",
-        "Cardiology Image Analysis",
-        "Pathology Slide Labeling",
-        "3D Slicer Annotation"
-      ],
-      icon: <Activity />,
-      image: "/images/medical/medical_imaging.png"
+      title: "1. Medical Imaging & Diagnostics Companies",
+      icon: <Activity size={20} />,
+      image: "/images/medical/medical_imaging.png",
+      description: (
+        <div className="space-y-4">
+           <span className="text-gray-700 text-lg md:text-xl leading-snug font-normal block">We annotate radiology and diagnostic datasets, including X-rays, CT scans, MRI, ultrasound, and pathology images. Our services include tumor segmentation, organ delineation, lesion detection, disease classification, and abnormality tagging to support computer-aided diagnosis (CAD) systems.</span>
+        </div>
+      )
     },
     {
-      title: "EHR & Clinical Records",
-      description: "Structuring and de-identifying clinical notes, electronic health records, and prescription data for research and analytics while maintaining strict HIPAA and global privacy compliance.",
-      features: [
-        "Patient Record Structuring",
-        "Clinical NLP Analysis",
-        "Medical Data De-identification",
-        "Prescription Data Tagging"
-      ],
-      icon: <ClipboardList />,
-      image: "/images/medical/medical_ehr.png"
+      title: "2. HealthTech & AI Startups",
+      icon: <Zap size={20} />,
+      image: "/images/medical/chatbot.png",
+      description: (
+        <div className="space-y-4">
+           <span className="text-gray-700 text-lg md:text-xl leading-snug font-normal block">From predictive analytics to clinical decision support, we label structured and unstructured healthcare data such as clinical notes, prescriptions, patient reports, and symptom data. This helps train NLP and predictive models for risk assessment, disease progression, and treatment recommendations.</span>
+        </div>
+      )
     },
     {
-      title: "Telemedicine & Remote Care",
-      description: "Supporting virtual consultation platforms by annotating patient symptom data, video sessions, and remote monitoring sensor data for AI-driven diagnostic insights.",
-      features: [
-        "Symptom-to-Diagnosis Data",
-        "Video Consultation Analysis",
-        "Remote Vitals Monitoring",
-        "Patient Interaction Labeling"
-      ],
-      icon: <Heart />,
-      image: "/images/medical/telemedicine.png"
+      title: "3. Hospitals & Healthcare Providers",
+      icon: <ClipboardList size={20} />,
+      image: "/images/medical/medical_ehr.png",
+      description: (
+        <div className="space-y-4">
+           <span className="text-gray-700 text-lg md:text-xl leading-snug font-normal block">We support digital transformation initiatives by annotating electronic health records (EHR), medical forms, voice dictations, and workflow data—enabling automation, clinical documentation improvement, and operational intelligence.</span>
+        </div>
+      )
     },
     {
-      title: "Pharma & Drug Discovery",
-      description: "Preparing complex datasets for molecular research, clinical trials, and drug interaction modeling through domain-expert data preparation and biochemical tagging.",
-      features: [
-        "Molecular Data Tagging",
-        "Clinical Trial Documentation",
-        "Drug Synergy Prediction",
-        "Biochemical Data Prep"
-      ],
-      icon: <Microscope />,
-      image: "/images/medical/pharma.png"
+      title: "4. Pharmaceutical & Life Sciences Companies",
+      icon: <Microscope size={20} />,
+      image: "/images/medical/pharma.png",
+      description: (
+        <div className="space-y-4">
+           <span className="text-gray-700 text-lg md:text-xl leading-snug font-normal block">Our annotation services help in clinical trial data labeling, adverse event classification, drug safety monitoring, and research data structuring, accelerating drug development and regulatory processes.</span>
+        </div>
+      )
     },
     {
-      title: "Healthcare AI Chatbots",
-      description: "Training datasets for medical virtual assistants, including intent classification, entity recognition of specialized medical terms, and patient sentiment analysis.",
-      features: [
-        "Medical Intent Mapping",
-        "Medical Entity Recognition",
-        "Contextual Query Analysis",
-        "Multi-lingual Support"
-      ],
-      icon: <Zap />,
-      image: "/images/medical/chatbot.png"
+      title: "5. Telemedicine & Remote Monitoring Platforms",
+      icon: <Heart size={20} />,
+      image: "/images/medical/telemedicine.png",
+      description: (
+        <div className="space-y-4">
+           <span className="text-gray-700 text-lg md:text-xl leading-snug font-normal block">We annotate wearable sensor data, patient interaction records, and remote consultation datasets to enable real-time health monitoring, patient behavior analysis, and personalized care solutions.</span>
+        </div>
+      )
     }
   ];
 
   const labelingTypes = [
-    "Polygon & Bounding Box",
-    "Semantic Segmentation",
-    "Named Entity Recognition",
-    "Text Classification",
-    "Pixel-level Masking",
-    "Instance Segmentation",
-    "Video Temporal Labeling"
+    { title: "Image Labeling", desc: "Marking tumors, organs, and abnormalities in X-ray, CT, MRI, and ultrasound images.", icon: <Scan size={18} /> },
+    { title: "Text Labeling", desc: "Tagging diseases, symptoms, drugs, and medical terms in clinical documents.", icon: <FileText size={18} /> },
+    { title: "Audio Labeling", desc: "Annotating medical speech, doctor–patient conversations, and diagnostic sounds.", icon: <Mic size={18} /> },
+    { title: "Video Labeling", desc: "Tracking surgical actions, tools, and patient movements in medical videos.", icon: <Video size={18} /> },
+    { title: "Signal Labeling", desc: "Marking events and anomalies in ECG, EEG, EMG, and other biomedical signals.", icon: <Activity size={18} /> },
+    { title: "OCR Labeling", desc: "Extracting and validating text from medical forms and reports.", icon: <FileSearch size={18} /> }
   ];
 
   return (
     <div className="bg-white text-slate-900 min-h-screen font-sans selection:bg-brand-100 selection:text-brand-900">
       
-      {/* 1. Hero Section - Bold Case Study Style */}
-      <section className="relative pt-32 md:pt-48 pb-20 overflow-hidden bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-slate-600 text-[11px] font-bold uppercase tracking-[0.2em] mb-8">
-            <Link to="/" className="hover:text-brand-600 transition-colors">Home</Link>
-            <ChevronRight size={10} strokeWidth={3} />
-            <span>Industries</span>
-            <ChevronRight size={10} strokeWidth={3} />
-            <span className="text-brand-600 font-bold uppercase">Medical & Healthcare</span>
-          </div>
+      {/* 1. Hero Section */}
+      <section className="relative mt-[60px] md:mt-[64px] pt-12 md:pt-20 pb-32 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0 bg-black">
+          <img 
+            src="/What-We-Serve-Final-hero/Medical_&_Healthcare.png" 
+            alt="Healthcare Hero Background" 
+            className="w-full h-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+        </div>
 
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 text-brand-600 text-[13px] font-semibold mb-8 border border-brand-100/50 uppercase tracking-widest shadow-sm shadow-brand-100">
-            <Sparkles size={14} className="animate-pulse" />
-            Precision Health Data
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 flex flex-col items-start text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white backdrop-blur-sm border border-white/20 text-[12px] font-medium mb-8 tracking-wider">
+             Industry We Serve — India
           </div>
-
-          <h1 className="text-4xl md:text-7xl font-semibold text-slate-900 leading-[1.05] tracking-tight mb-8">
-            Clinical <span className="text-brand-600 italic">Precision</span> <br className="hidden md:block" />
-            for Medical AI.
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-[1.2] tracking-tight mb-6 max-w-4xl">
+             Medical & <br className="hidden md:block" />
+             <span className="text-white">Healthcare Data Annotation</span>
           </h1>
-          
-          <p className="text-slate-600 text-xl md:text-2xl font-medium leading-relaxed max-w-4xl mx-auto mb-12">
-            Life-critical systems require ground-truth absolute. We deliver high-accuracy, HIPAA-compliant datasets that enable health-tech leaders to build world-class diagnostic technology.
+          <p className="text-gray-300 text-base md:text-xl font-normal leading-relaxed max-w-2xl">
+             High-precision data annotation for medical imaging, clinical text, and patient monitoring.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Link to="/contact">
-               <button className="flex items-center gap-3 bg-slate-900 text-white px-10 py-4 rounded-full font-semibold text-base hover:bg-brand-600 transition-all hover:shadow-xl hover:shadow-brand-600/20 active:scale-95">
-                 <ArrowRight size={18} /> Scale Your Medical AI
-               </button>
-             </Link>
+          <div className="mt-10">
+            <Link to="/contact">
+                <button className="flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-semibold text-base hover:bg-brand-600 hover:text-white transition-all active:scale-95 shadow-xl shadow-black/20">
+                    Scale Your Project <ArrowRight size={18} />
+                </button>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 2. Context & Highlights - Case Study Style Box */}
-      <section className="py-24 border-t border-slate-50 bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <div className="p-12 md:p-16 bg-slate-50 border-2 border-slate-100 rounded-3xl relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-600/5 rounded-full blur-[80px] -mt-24 -mr-24"></div>
-             
-             <div className="relative z-10 flex flex-col lg:flex-row gap-16 lg:gap-24">
-                <div className="w-full lg:w-1/2 space-y-8">
-                   <div className="flex items-center gap-3">
-                      <div className="h-[2px] w-12 bg-brand-600"></div>
-                      <span className="text-brand-600 text-[11px] font-bold uppercase tracking-[0.3em]">Compliance & Care</span>
-                   </div>
-                   <h2 className="text-3xl md:text-5xl font-semibold text-slate-950 tracking-tight leading-tight uppercase">
-                     Accuracy <br /> <span className="text-brand-600 font-bold">In-Diagnostics.</span>
-                   </h2>
-                   <p className="text-slate-700 text-xl font-medium leading-relaxed italic">
-                      "Medical AI depends on absolute precision. We support health-tech companies with high-fidelity annotation for radiology, pathology, and clinical informatics."
-                   </p>
-                </div>
-                
-                <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 h-fit self-center">
-                   {labelingTypes.map((type, i) => (
-                     <div key={i} className="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm flex items-center gap-3 group hover:border-brand-600 transition-colors">
-                        <div className="w-1.5 h-1.5 rounded-full bg-brand-600 group-hover:scale-150 transition-transform"></div>
-                        <div className="text-slate-900 font-bold text-[11px] uppercase tracking-tight">{type}</div>
-                     </div>
-                   ))}
-                </div>
+      {/* Intro Text Block */}
+      <section className="pt-16 md:pt-24 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 space-y-6 text-gray-700 text-base md:text-lg font-normal leading-snug">
+             <div className="space-y-2 text-left mb-6">
+                 <h2 className="text-xl md:text-2xl font-medium text-gray-900">
+                    Medical & Healthcare
+                 </h2>
+                 <div className="h-1 w-12 bg-brand-600"></div>
              </div>
-          </div>
+             <p>
+                We support the Medical & Healthcare industry with high-precision data annotation for medical imaging, clinical text, EHR data, and patient monitoring datasets. Our services include tumor and organ segmentation, disease classification, radiology image labeling, medical NLP annotation, clinical data structuring, and wearable health data labeling.
+             </p>
+             <p>
+                The Medical & Healthcare industry is rapidly adopting Artificial Intelligence to improve diagnosis accuracy, patient care, and operational efficiency. High-quality, domain-specific data annotation is essential for training reliable healthcare AI systems.
+             </p>
         </div>
       </section>
 
-      {/* 3. Deep-Dive Services - Alternating Style */}
-      <section className="py-12 md:py-24 bg-white">
+      {/* 2. How We Support the Healthcare Ecosystem */}
+      <section className="py-24 bg-slate-50 overflow-hidden">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 space-y-32">
-          {supportCategories.map((service, index) => (
+          
+          <div className="space-y-6 text-center max-w-3xl mx-auto mb-20">
+             <h2 className="text-2xl md:text-4xl font-semibold text-slate-900 leading-tight">
+               How We Support <br /> the Healthcare Ecosystem
+             </h2>
+             <div className="h-1.5 w-24 bg-brand-600 mx-auto"></div>
+          </div>
+
+          {supportCategories.map((use, index) => (
             <div
               key={index}
               className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-16 lg:gap-32 items-center`}
             >
-              {/* Text Part */}
-              <div className="w-full lg:w-1/2 space-y-8">
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 bg-brand-50 text-brand-600 rounded-2xl">
-                       {service.icon}
+              <div className="w-full lg:w-1/2 space-y-8 text-left">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 rounded-3xl bg-slate-100 flex items-center justify-center text-brand-600 group hover:bg-brand-600 hover:text-white transition-all duration-500 hover:scale-110">
+                       {use.icon}
                     </div>
-                    <span className="text-brand-600 font-bold text-[11px] uppercase tracking-widest">VERTICAL 0{index + 1}</span>
+                    <div className="h-px flex-1 bg-slate-200"></div>
                   </div>
-                  <h2 className="text-3xl md:text-5xl font-semibold text-slate-950 leading-tight tracking-tight uppercase">
-                    {service.title}
-                  </h2>
+                  <h3 className="text-xl md:text-2xl font-semibold text-slate-900 leading-tight">
+                    {use.title}
+                  </h3>
                 </div>
                 
-                <p className="text-slate-600 text-lg md:text-xl leading-relaxed font-medium opacity-90 text-left">
-                  {service.description}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8 pt-4">
-                  {service.features.map((feature, fIndex) => (
-                    <div key={fIndex} className="flex items-center gap-3 group">
-                      <div className="w-6 h-6 rounded-full bg-slate-900 flex items-center justify-center text-white text-[10px] font-bold group-hover:bg-brand-600 transition-colors shadow-lg shadow-slate-900/10">
-                        {fIndex + 1}
-                      </div>
-                      <span className="text-slate-800 font-bold text-sm tracking-tight">{feature}</span>
-                    </div>
-                  ))}
+                <div className="w-full">
+                  {use.description}
                 </div>
               </div>
 
-              {/* Image Part - Premium Frame */}
               <div className="w-full lg:w-1/2">
                  <div className="relative group">
-                    <div className="absolute -inset-4 bg-gradient-to-tr from-brand-600/10 to-accent-cyan/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="relative rounded-2xl overflow-hidden transition-transform duration-700 group-hover:-translate-y-2">
+                    <div className="absolute -inset-4 bg-gradient-to-tr from-brand-600/10 to-brand-400/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                    <div className="relative overflow-hidden bg-slate-100 rounded-2xl shadow-2xl">
                        <img 
-                          src={service.image} 
-                          alt={service.title} 
-                          className="w-full aspect-[4/3] object-cover transition-transform duration-1000 group-hover:scale-110"
+                          src={use.image} 
+                          alt={use.title} 
+                          className="w-full h-[300px] md:h-[400px] object-cover"
                        />
+                       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                  </div>
               </div>
@@ -207,27 +178,44 @@ const MedicalHealthcare = () => {
         </div>
       </section>
 
-      {/* Dark Workflow Section */}
-      <section className="py-24 md:py-32 bg-slate-950 text-white overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#4f46e5_1px,transparent_1px)] [background-size:40px_40px]"></div>
-        </div>
-        
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 text-center space-y-12">
-            <div className="space-y-6">
-                <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight leading-[1.1] uppercase">
-                   Advancing <br /><span className="text-brand-400 font-bold italic">Life-Saving</span> <br /> Intelligence.
-                </h2>
-                <div className="h-2 w-24 bg-brand-500 mx-auto"></div>
-                <p className="text-slate-300 text-xl font-medium leading-relaxed max-w-3xl mx-auto italic opacity-80">
-                   Join health-tech leaders who trust LabelzAI for high-accuracy, HIPAA-compliant medical datasets that fuel absolute diagnostic reliability.
-                </p>
+      {/* 3. Types of data labeling */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+            <div className="max-w-6xl mx-auto space-y-6">
+                <div className="space-y-2 text-left">
+                    <h2 className="text-xl md:text-2xl font-medium text-gray-900">
+                       Types of data labeling in the healthcare industry:
+                    </h2>
+                    <div className="h-1 w-12 bg-brand-600"></div>
+                </div>
+
+                <div className="space-y-4 pt-2">
+                   {labelingTypes.map((item, i) => (
+                     <div key={i} className="flex items-start gap-4">
+                       <div className="w-1.5 h-1.5 rounded-full bg-gray-700 mt-2.5 shrink-0"></div>
+                       <span className="text-gray-700 text-base md:text-lg leading-snug">
+                         <strong className="font-semibold text-gray-900">{item.title}</strong> – {item.desc}
+                       </span>
+                     </div>
+                   ))}
+                </div>
             </div>
-            
-            <div className="pt-8">
+        </div>
+      </section>
+
+      {/* 4. Bottom CTA Section */}
+      <section className="py-24 bg-gray-900">
+        <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <h2 className="text-3xl md:text-5xl font-medium text-white tracking-tight">
+               Ready to Scale Your Healthcare AI?
+            </h2>
+            <p className="text-gray-400 text-lg md:text-xl font-normal max-w-2xl mx-auto leading-relaxed">
+               Partner with us for high-precision, reliable, and scalable data annotation tailored to your domain.
+            </p>
+            <div className="pt-6">
                 <Link to="/contact">
-                   <button className="flex items-center gap-4 bg-white text-slate-950 px-12 py-6 text-xl font-bold hover:bg-brand-600 hover:text-white transition-all rounded-full shadow-2xl shadow-brand-600/20 active:scale-95 group mx-auto">
-                      Get Started with Medical Prep <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+                   <button className="inline-flex items-center gap-3 bg-brand-600 text-white px-8 py-4 rounded-full font-medium text-lg hover:bg-brand-500 transition-all">
+                      Contact Our Team <ArrowRight size={20} />
                    </button>
                 </Link>
             </div>

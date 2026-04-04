@@ -64,8 +64,8 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         (isScrolled || isMobileMenuOpen) 
-          ? 'bg-white border-b border-slate-100 py-4 md:py-3' 
-          : 'bg-transparent py-6'
+          ? 'bg-white border-b border-slate-100 py-2.5' 
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -78,7 +78,7 @@ const Navbar = () => {
           <img 
             src="/logo.png" 
             alt="LabelzAI Logo" 
-            className="h-8 md:h-10 w-auto transition-all" 
+            className="h-7 md:h-8 w-auto transition-all" 
           />
         </Link>
 

@@ -69,10 +69,10 @@ const Services = () => {
       <div className="max-w-[1400px] mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 text-slate-900 text-[13px] font-semibold mb-6">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 text-slate-900 text-[13px] font-semibold mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-brand-600 animate-pulse"></span>
             Service Categories
-          </div>
+          </div> */}
           <h2 className="text-3xl md:text-6xl font-semibold text-slate-900 mb-8 tracking-tight">
             Comprehensive <span className="text-brand-600">Solutions</span>
           </h2>
