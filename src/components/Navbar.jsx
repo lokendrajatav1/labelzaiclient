@@ -3,7 +3,8 @@ import {
   Menu, X, ChevronDown, 
   Camera, Brain, Layers, Database, Mic, Search, Merge, 
   BrainCircuit, Car, Stethoscope, ShoppingBag, 
-  Factory, Film, GraduationCap, Sprout
+  Factory, Film, GraduationCap, Sprout,
+  Info, ShieldCheck
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -85,7 +86,37 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-10">
           <Link to="/" className="text-[15px] font-medium text-slate-900 hover:text-brand-600 transition-colors">Home</Link>
-          <Link to="/about" className="text-[15px] font-medium text-slate-900 hover:text-brand-600 transition-colors">About Us</Link>
+
+          {/* Company Dropdown */}
+          <div 
+            className="relative group"
+            onMouseEnter={() => setActiveDropdown('company')}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button className="flex items-center gap-1 text-[15px] font-medium text-slate-900 hover:text-brand-600 transition-colors py-2">
+              Company <ChevronDown size={14} className={`transition-transform duration-300 ${activeDropdown === 'company' ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`absolute top-full -left-4 w-[280px] bg-white border border-slate-100 rounded-2xl p-3 flex flex-col gap-2 transition-all duration-300 origin-top shadow-xl shadow-slate-200/60 ${activeDropdown === 'company' ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
+              <Link to="/about" className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-50/40 transition-all group/item border border-transparent hover:border-brand-100" onClick={() => setActiveDropdown(null)}>
+                <div className="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center group-hover/item:bg-brand-600 group-hover/item:text-white transition-colors flex-shrink-0">
+                  <Info size={16} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-900 mb-0.5 leading-tight">About Us</h4>
+                  <p className="text-[12px] text-slate-500 font-medium leading-relaxed">Our story, mission & vision</p>
+                </div>
+              </Link>
+              <Link to="/quality-compliance" className="flex items-start gap-4 p-4 rounded-xl hover:bg-brand-50/40 transition-all group/item border border-transparent hover:border-brand-100" onClick={() => setActiveDropdown(null)}>
+                <div className="w-9 h-9 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center group-hover/item:bg-brand-600 group-hover/item:text-white transition-colors flex-shrink-0">
+                  <ShieldCheck size={16} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-900 mb-0.5 leading-tight">Quality & Compliance</h4>
+                  <p className="text-[12px] text-slate-500 font-medium leading-relaxed">Our QA framework & standards</p>
+                </div>
+              </Link>
+            </div>
+          </div>
           
           {/* Services Dropdown */}
           <div 
@@ -184,7 +215,17 @@ const Navbar = () => {
           <div className="flex flex-col gap-8 flex-1">
             <div className="flex flex-col gap-6">
               <Link to="/" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-              <Link to="/about" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+              <div className="border-b border-slate-100 pb-2 space-y-3">
+                <p className="text-xl font-medium text-slate-900">Company</p>
+                <div className="space-y-2 pl-2">
+                  <Link to="/about" className="flex items-center gap-3 py-1.5 text-base font-medium text-slate-600 hover:text-brand-600 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                    <Info size={15} className="text-brand-600" /> About Us
+                  </Link>
+                  <Link to="/quality-compliance" className="flex items-center gap-3 py-1.5 text-base font-medium text-slate-600 hover:text-brand-600 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                    <ShieldCheck size={15} className="text-brand-600" /> Quality & Compliance
+                  </Link>
+                </div>
+              </div>
               <Link to="/career" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
               <Link to="/contact" className="text-xl font-medium text-slate-900 border-b border-slate-100 pb-2" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
             </div>

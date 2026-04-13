@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -30,6 +30,12 @@ import EducationEdtechCaseStudy from './pages/case-studies/EducationEdtech';
 import ManufacturingIndustrialCaseStudy from './pages/case-studies/ManufacturingIndustrial';
 import MedicalHealthcareCaseStudy from './pages/case-studies/MedicalHealthcare';
 import About from './pages/About';
+import QualityCompliance from './pages/QualityCompliance';
+
+// Admin Sub-pages
+import ContactsTab from './components/admin/ContactsTab';
+import JobsTab from './components/admin/JobsTab';
+import ApplicationsTab from './components/admin/ApplicationsTab';
 
 function App() {
   const location = useLocation();
@@ -41,6 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/quality-compliance" element={<QualityCompliance />} />
         <Route path="/services/image-annotation" element={<ImageAnnotation />} />
         <Route path="/services/video-annotation" element={<VideoAnnotation />} />
         <Route path="/services/audio-annotation" element={<AudioAnnotation />} />
@@ -51,14 +58,22 @@ function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin/login" element={<AdminLogin />} />
+        
+        {/* Admin Section with Nested Routes */}
         <Route 
           path="/admin" 
           element={
             <ProtectedRoute>
               <Admin />
             </ProtectedRoute>
-          } 
-        />
+          }
+        >
+          <Route index element={<Navigate to="enquiries" replace />} />
+          <Route path="enquiries" element={<ContactsTab />} />
+          <Route path="jobs" element={<JobsTab />} />
+          <Route path="applications" element={<ApplicationsTab />} />
+        </Route>
+
         <Route path="/industries/artificial-intelligence" element={<ArtificialIntelligence />} />
         <Route path="/industries/autonomous-vehicles" element={<AutonomousVehicles />} />
         <Route path="/industries/healthcare-lifesciences" element={<MedicalHealthcare />} />
@@ -83,4 +98,3 @@ function App() {
 }
 
 export default App;
-

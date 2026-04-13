@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { 
-  Briefcase, MapPin, Clock, DollarSign, 
+  Briefcase, MapPin, Clock, IndianRupee, 
   CheckCircle2, ArrowRight, Send, 
   Search, X, Loader2, AlertCircle, Upload, FileText
 } from 'lucide-react';
@@ -233,7 +233,7 @@ const Career = () => {
                     <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-4 text-sm font-semibold text-slate-500">
                         <span className="flex items-center gap-2"><MapPin size={16} className="text-slate-600"/>{job.workMode}</span>
                         <span className="flex items-center gap-2"><Clock size={16} className="text-slate-600"/>{job.engagement}</span>
-                        <span className="flex items-center gap-2"><DollarSign size={16} className="text-slate-600"/>{job.compensation}</span>
+                        <span className="flex items-center gap-2"><IndianRupee size={16} className="text-slate-600"/>{job.compensation}</span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between md:justify-end gap-6 w-full md:w-auto mt-2 md:mt-0 pt-4 md:pt-0 border-t md:border-none border-slate-100">
