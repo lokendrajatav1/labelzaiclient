@@ -79,9 +79,7 @@ const Contact = () => {
         </div>
         
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-50 text-brand-700 text-[12px] font-semibold mb-8 tracking-wider uppercase border border-brand-100/50">
-             Contact Us – LabelzAI Techservices LLP
-          </div>
+          
           <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-[1.1] tracking-tight mb-8 max-w-5xl">
              Let’s Build High-Quality <br className="hidden md:block" />
              <span className="text-brand-600">AI Training Data Together</span>
@@ -107,7 +105,7 @@ const Contact = () => {
                     </div>
                     
                     <div className="space-y-8 text-gray-600 text-lg md:text-xl font-normal leading-relaxed">
-                        <p className="text-gray-900 font-semibold text-xl md:text-2xl leading-relaxed italic border-l-4 border-brand-600 pl-6 py-2 bg-slate-50 rounded-r-2xl shadow-xs">
+                        <p className="text-gray-900 font-semibold text-xl md:text-2xl leading-relaxed italic  py-2 bg-slate-50 rounded-r-2xl shadow-xs">
                             We specialize in delivering accurate, scalable, and secure data annotation solutions for companies building AI models.
                         </p>
                         <p>
@@ -175,7 +173,7 @@ const Contact = () => {
                                 id="firstName"
                                 value={formData.firstName}
                                 onChange={handleChange}
-                                className={`w-full px-6 py-5 rounded-2xl bg-slate-50 border ${fieldErrors.firstName ? 'border-red-400' : 'border-slate-100'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 placeholder:text-gray-400`}
+                                className={`w-full px-6 py-2.5 rounded-2xl bg-slate-50 border ${fieldErrors.firstName ? 'border-red-400' : 'border-slate-200'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 placeholder:text-gray-400`}
                                 placeholder="e.g. John"
                                 required
                             />
@@ -187,7 +185,7 @@ const Contact = () => {
                                 id="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
-                                className={`w-full px-6 py-5 rounded-2xl bg-slate-50 border ${fieldErrors.lastName ? 'border-red-400' : 'border-slate-100'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 placeholder:text-gray-400`}
+                                className={`w-full px-6 py-2.5 rounded-2xl bg-slate-50 border ${fieldErrors.lastName ? 'border-red-400' : 'border-slate-200'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 placeholder:text-gray-400`}
                                 placeholder="e.g. Doe"
                                 required
                             />
@@ -201,7 +199,7 @@ const Contact = () => {
                             id="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className={`w-full px-6 py-5 rounded-2xl bg-slate-50 border ${fieldErrors.email ? 'border-red-400' : 'border-slate-100'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 placeholder:text-gray-400`}
+                            className={`w-full px-6 py-2.5 rounded-2xl bg-slate-50 border ${fieldErrors.email ? 'border-red-400' : 'border-slate-200'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 placeholder:text-gray-400`}
                             placeholder="john@company.com"
                             required
                         />
@@ -213,7 +211,7 @@ const Contact = () => {
                             id="service"
                             value={formData.service}
                             onChange={handleChange}
-                            className={`w-full px-6 py-5 rounded-2xl bg-slate-50 border ${fieldErrors.service ? 'border-red-400' : 'border-slate-100'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 cursor-pointer`}
+                            className={`w-full px-6 py-2.5 rounded-2xl bg-slate-50 border ${fieldErrors.service ? 'border-red-400' : 'border-slate-200'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 cursor-pointer`}
                             required
                         >
                             <option value="">Select a service...</option>
@@ -233,7 +231,7 @@ const Contact = () => {
                             rows="5"
                             value={formData.message}
                             onChange={handleChange}
-                            className={`w-full px-6 py-5 rounded-2xl bg-slate-50 border ${fieldErrors.message ? 'border-red-400' : 'border-slate-100'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 placeholder:text-gray-400 resize-none`}
+                            className={`w-full px-6 py-2.5 rounded-2xl bg-slate-50 border ${fieldErrors.message ? 'border-red-400' : 'border-slate-200'} focus:outline-none focus:ring-2 focus:ring-brand-600/20 focus:bg-white transition-all font-normal text-gray-900 placeholder:text-gray-400 resize-none`}
                             placeholder="Tell us about your project requirements..."
                             required
                         ></textarea>
@@ -242,7 +240,7 @@ const Contact = () => {
                     <button 
                         type="submit" 
                         disabled={loading}
-                        className="w-full bg-slate-900 hover:bg-brand-600 text-white font-semibold py-6 rounded-2xl transition-all active:scale-[0.98] flex justify-center items-center gap-3 text-xl disabled:opacity-70 group"
+                        className="w-full bg-slate-900 hover:bg-brand-600 text-white font-semibold py-4.5 rounded-2xl transition-all active:scale-[0.98] flex justify-center items-center gap-3 text-xl disabled:opacity-70 group"
                     >
                         {loading ? (
                             <><Loader2 className="animate-spin" size={24} /> Transmitting...</>

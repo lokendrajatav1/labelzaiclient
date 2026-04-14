@@ -26,8 +26,8 @@ const QualityCompliance = () => {
               <div className="rounded-[2.5rem] p-0 relative group overflow-hidden">
                 <div className="aspect-[3/4] rounded-[2rem] overflow-hidden bg-white border border-gray-100 relative">
                   <img 
-                    src="/service-audit.png" 
-                    alt="ISO 9001 Audit" 
+                    src="/ISO-9001-2015.jpeg" 
+                    alt="ISO 9001-2015" 
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[2s]"
                   />
                 </div>

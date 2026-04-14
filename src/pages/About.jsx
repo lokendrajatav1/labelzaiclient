@@ -39,7 +39,7 @@ const About = () => {
                 {/* Right Side: Image */}
                 <div className="relative group">
                     <div className="rounded-2xl overflow-hidden border border-slate-100 group shadow-2xl shadow-slate-200/50 relative z-10 transition-all duration-700 hover:scale-[1.02]">
-                        <img src="/about_hero.png" alt="About LabelzAI" className="w-full h-full object-cover" />
+                        <img src="/about_us.png" alt="About LabelzAI" className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-linear-to-tr from-brand-600/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
                     {/* Decorative Background Elements */}
